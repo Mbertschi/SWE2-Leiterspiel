@@ -1,8 +1,8 @@
 package business;
 
-import java.util.Objects;
 
-public class Player {
+
+public class Player implements PlayerInterface{
 
     private String name;
 
@@ -12,6 +12,15 @@ public class Player {
 
     }
 
+
+    @Override
+    public String toString() {
+        return "Player{" +
+                "name='" + name + '\'' +
+                '}';
+    }
+
+
     public String getName() {
         return name;
     }
@@ -20,6 +29,20 @@ public class Player {
         this.name = name;
     }
 
+    @Override
+    public int amoutnPlayer() {
+        return 0;
+    }
+
+    @Override
+    public void updatePlayer() {
+
+    }
+
+    @Override
+    public void displayPlayer() {
+
+    }
 }
 
 
