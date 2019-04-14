@@ -14,4 +14,7 @@ public class Field {
     public Field(int fieldNummer){
         this.fieldNummer=  fieldNummer;
     }
+
+
+
 }

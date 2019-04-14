@@ -13,4 +13,6 @@ public class SpecialField extends Field {
     public int goDown(){
         return getFieldNummer();
     }
+
+
 }

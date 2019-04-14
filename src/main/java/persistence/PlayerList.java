@@ -2,21 +2,19 @@ package persistence;
 
 import business.Player;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Objects;
 
 public class PlayerList implements MokInterfaceDataPlayer {
 
-   List<Player> playerList = new LinkedList<>();
+
 
 
 
 
     @Override
         public List getDataPlayer() {
-        return null;
+        return creatList();
     }
 
     @Override
@@ -38,8 +36,14 @@ public class PlayerList implements MokInterfaceDataPlayer {
     @Override
     public void addPlayerToList() {
 
+    creatList().add(new Player(""));
 
 
+    }
 
+    public List creatList(){
+      List<Player> playerList = new LinkedList<>();
+
+      return playerList;
     }
 }

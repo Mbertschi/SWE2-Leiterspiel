@@ -1,6 +1,7 @@
 package business;
 
 
+import java.util.Scanner;
 
 public class Player implements PlayerInterface{
 
@@ -36,6 +37,7 @@ public class Player implements PlayerInterface{
 
     @Override
     public void updatePlayer() {
+        Scanner playerName = new Scanner(System.in);
 
     }
 
