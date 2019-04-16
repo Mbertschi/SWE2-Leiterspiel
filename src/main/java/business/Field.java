@@ -1,5 +1,7 @@
 package business;
 
+import java.util.Objects;
+
 public class Field {
     private int fieldNummer;
 
@@ -15,6 +17,16 @@ public class Field {
         this.fieldNummer=  fieldNummer;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Field)) return false;
+        Field field = (Field) o;
+        return fieldNummer == field.fieldNummer;
+    }
 
-
+    @Override
+    public int hashCode() {
+        return Objects.hash(fieldNummer);
+    }
 }
