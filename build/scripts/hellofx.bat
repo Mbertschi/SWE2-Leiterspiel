@@ -66,7 +66,7 @@ set CMD_LINE_ARGS=%*
 set CLASSPATH=%APP_HOME%\lib\hellofx.jar;%APP_HOME%\lib\javafx-fxml-11.0.2-mac.jar;%APP_HOME%\lib\javafx-controls-11.0.2-mac.jar;%APP_HOME%\lib\javafx-controls-11.0.2.jar;%APP_HOME%\lib\javafx-graphics-11.0.2-mac.jar;%APP_HOME%\lib\javafx-graphics-11.0.2.jar;%APP_HOME%\lib\javafx-base-11.0.2-mac.jar;%APP_HOME%\lib\javafx-base-11.0.2.jar
 
 @rem Execute hellofx
-"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %HELLOFX_OPTS%  -classpath "%CLASSPATH%" openjfx.MainApp %CMD_LINE_ARGS%
+"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %HELLOFX_OPTS%  -classpath "%CLASSPATH%" UI.MainApp %CMD_LINE_ARGS%
 
 :end
 @rem End local scope for the variables with windows NT shell
