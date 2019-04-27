@@ -10,23 +10,37 @@ import java.util.Scanner;
 public class MainController {
         Player player;
 
+        public  void startPlay(){
+               System.out.println("Herzlich Willkomen zum Leiterspiel");
+        }
+
+        public  void numberOfPlayer() {
+
+                System.out.println("Bitte geben sie die Anzahl spieler ein");
+
+        }
+
+        Scanner amountPlayerIn = new Scanner(System.in);
+        Scanner playerName = new Scanner(System.in);
+
         public int setAmountPlayerIn( Scanner amountPlayerIn) {
-               amountPlayerIn.nextInt() ;
+
+
+                 setAmountPlayerIn();
 
                return amountPlayerIn.nextInt();
         }
 
-        private int numberOfPlayers;
-        Scanner amountPlayerIn = new Scanner(System.in);
-        Scanner playerName = new Scanner(System.in);
 
-        public Object createPlayer( ){
+
+
+        public PlayerInterface createPlayer( ){
                 for (int i=0; i== amountPlayerIn.nextInt() ; i++){
 
 
-                        System.out.println("Bitte geben sie ihren Namen ein");
-                        new Player(namePlayer());
 
+
+                        new Player("");
 
 
 
@@ -35,7 +49,7 @@ public class MainController {
 
 
 
-                return player;
+                return null;
 
         }
 
