@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="929.0" prefWidth="1240.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TextField layoutX="324.0" layoutY="52.0" prefHeight="205.0" prefWidth="594.0" text="Leiterspiel">
+         <font>
+            <Font size="96.0" />
+         </font>
+      </TextField>
+      <TextField layoutX="506.0" layoutY="277.0" prefHeight="51.0" prefWidth="217.0" text="by M&amp;R">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </TextField>
+      <TextField layoutX="200.0" layoutY="437.0" prefHeight="65.0" prefWidth="390.0" text="Anzahl eingegebene Spieler:">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </TextField>
+      <TextField layoutX="615.0" layoutY="440.0" prefHeight="59.0" prefWidth="149.0" promptText="Spieler Anzahl" />
+      <TextField layoutX="200.0" layoutY="547.0" prefHeight="46.0" prefWidth="390.0" promptText="Spilername eingeben">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </TextField>
+      <Button layoutX="1017.0" layoutY="805.0" mnemonicParsing="false" onMouseClicked="#nextName" prefHeight="43.0" prefWidth="168.0" text="Weiter &gt;" />
+      <Button layoutX="80.0" layoutY="805.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="168.0" text="&lt; Zurück zu Spieleranazahl" />
+   </children>
+</Pane>

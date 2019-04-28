@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="929.0" prefWidth="1240.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TextField layoutX="334.0" layoutY="62.0" prefHeight="205.0" prefWidth="594.0" text="Leiterspiel">
+         <font>
+            <Font size="96.0" />
+         </font>
+      </TextField>
+      <TextField layoutX="526.0" layoutY="297.0" prefHeight="51.0" prefWidth="217.0" text="by M&amp;R">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </TextField>
+      <TextField layoutX="154.0" layoutY="432.0" prefHeight="60.0" prefWidth="163.0" text="Rangliste:">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </TextField>
+      <Button layoutX="184.0" layoutY="725.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="89.0" text="Revange" />
+      <Button layoutX="458.0" layoutY="725.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="163.0" text="Spiel neu Starten" />
+      <Button layoutX="752.0" layoutY="725.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="137.0" text="Spiel beenden" />
+   </children>
+</Pane>
