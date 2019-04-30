@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.*?>
 
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="929.0" prefWidth="1240.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<Pane>
    <children>
       <Circle fill="#010e1b" layoutX="907.0" layoutY="692.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fill="#ff1f1f" layoutX="907.0" layoutY="638.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
