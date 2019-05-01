@@ -1,6 +1,6 @@
 package UI;
 
-import java.awt.event.ActionEvent;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -10,34 +10,30 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-
-import javax.swing.*;
+import javafx.event.ActionEvent;
 
 public class FXMLController implements Initializable {
 
     @FXML
-    private Label label;
+    private Label label1;
 
     @FXML
-    private int amountPlayerTextfield;
+    private TextField amountPlayerTextfield;
 
     @FXML
     private Button addAmountButton;
 
-
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        //String javaVersion = System.getProperty("java.version");
-        //String javafxVersion = System.getProperty("javafx.version");
-        //label.setText("Hello, JavaFX " + javafxVersion + "\nRunning on Java " + javaVersion + ".");
-
-        //addAmountButton.(continueAmountPlayerButton();
+        addAmountButton.setOnAction((event) -> {
+            label1.setText("Button click hat funktioniert :)");
+            continueAmountPlayerButton();
+        });
     }
 
-
-    public void continueAmountPlayerButton() {
+    private void continueAmountPlayerButton() {
         MainController mainController = new MainController();
-        mainController.SetAmountPlayer(amountPlayerTextfield);
+        int amountPlayerValue = Integer.parseInt(amountPlayerTextfield.getText());
+        mainController.SetAmountPlayer(amountPlayerValue);
     }
-
 }
