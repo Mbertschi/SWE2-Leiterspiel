@@ -26,7 +26,7 @@
             <Font size="31.0" />
          </font>
       </TextField>
-      <TextField layoutX="665.0" layoutY="362.0" prefHeight="38.0" prefWidth="149.0" promptText="Spieler Anzahl" />
+      <TextField layoutX="665.0" layoutY="362.0" prefHeight="51.0" prefWidth="189.0" promptText="Spieler Anzahl" />
       <CheckBox layoutX="52.0" layoutY="459.0" mnemonicParsing="false" text="Mit Computer Spielen" />
    </children>
 </Pane>
