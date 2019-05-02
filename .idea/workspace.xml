@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69b9df9e-d5ad-4f1f-a46b-7820326dbed0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/resources/UI/start.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/UI/start.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/UI/start.fxml" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -73,18 +74,7 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/UI/start.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder" />
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="28" column="17" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -125,32 +115,9 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectConfigurationFiles">
-    <option name="files">
-      <list>
-        <option value="$PROJECT_DIR$/.idea/modules.xml" />
-        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
-        <option value="$PROJECT_DIR$/.idea/SWE2-Leiterspiel.iml" />
-        <option value="$PROJECT_DIR$/.idea/misc.xml" />
-        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
-        <option value="$PROJECT_DIR$/.idea/modules.xml" />
-        <option value="$PROJECT_DIR$/.idea/gradle.xml" />
-        <option value="$PROJECT_DIR$/.idea/modules/hellofx.iml" />
-        <option value="$PROJECT_DIR$/.idea/modules/hellofx.test.iml" />
-        <option value="$PROJECT_DIR$/.idea/modules/hellofx.main.iml" />
-        <option value="$PROJECT_DIR$/.idea/compiler.xml" />
-        <option value="$PROJECT_DIR$/.idea/libraries/Gradle__org_openjfx_javafx_base_11_0_2.xml" />
-        <option value="$PROJECT_DIR$/.idea/libraries/Gradle__org_openjfx_javafx_base_win_11_0_2.xml" />
-        <option value="$PROJECT_DIR$/.idea/libraries/Gradle__org_openjfx_javafx_controls_11_0_2.xml" />
-        <option value="$PROJECT_DIR$/.idea/libraries/Gradle__org_openjfx_javafx_controls_win_11_0_2.xml" />
-        <option value="$PROJECT_DIR$/.idea/libraries/Gradle__org_openjfx_javafx_fxml_win_11_0_2.xml" />
-        <option value="$PROJECT_DIR$/.idea/libraries/Gradle__org_openjfx_javafx_graphics_11_0_2.xml" />
-        <option value="$PROJECT_DIR$/.idea/libraries/Gradle__org_openjfx_javafx_graphics_win_11_0_2.xml" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="8" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="2031" />
+    <option name="y" value="-18" />
     <option name="width" value="1920" />
     <option name="height" value="1070" />
   </component>
@@ -358,12 +325,12 @@
       <workItem from="1556550277074" duration="142000" />
       <workItem from="1556643747012" duration="1304000" />
       <workItem from="1556645276683" duration="4612000" />
-      <workItem from="1556787688975" duration="69000" />
+      <workItem from="1556787688975" duration="324000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21550000" />
+    <option name="totallyTimeSpent" value="21805000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -375,7 +342,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="1912" y="-8" width="1936" height="1056" extended-state="7" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18710022" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
