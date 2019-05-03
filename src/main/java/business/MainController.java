@@ -9,6 +9,8 @@ import java.util.Scanner;
 
 public class MainController {
 
+        public MainController(){}
+
         private int amountPlayer;
 
         public void SetAmountPlayer(int amountPlayer) {
@@ -18,4 +20,8 @@ public class MainController {
         public int getAmountPlayer() {
                 return amountPlayer;
         }
+
+
+
+
 }

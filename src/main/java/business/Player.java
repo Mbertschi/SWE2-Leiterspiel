@@ -7,7 +7,6 @@ public class Player implements PlayerInterface{
 
     private String name;
 
-
     public Player(String name) {
         this.name = name;
 
@@ -44,6 +43,13 @@ public class Player implements PlayerInterface{
     @Override
     public void displayPlayer() {
 
+    }
+
+    public void createPlayer(){
+        MainController mainController = new MainController();
+        for(int i =0; i <= mainController.getAmountPlayer();i++){
+
+        }
     }
 }
 
