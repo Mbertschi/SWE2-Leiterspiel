@@ -6,7 +6,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.FXMLControllerSceneOne">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.FXMLControllerSceneTree">
    <children>
       <TextField layoutX="324.0" layoutY="52.0" prefHeight="205.0" prefWidth="594.0" text="Leiterspiel">
          <font>
@@ -31,7 +31,7 @@
       <TextField layoutX="473.0" layoutY="607.0" promptText="Spieler" />
       <TextField layoutX="250.0" layoutY="647.0" promptText="Spieler" />
       <Button fx:id="backToSceneTwo" layoutX="32.0" layoutY="803.0" mnemonicParsing="false" onAction="#backToSceneTwo" prefHeight="43.0" prefWidth="168.0" text="&lt; Zurück zu Spieler Name" />
-      <Button fx:id="goToSceneFive" layoutX="927.0" layoutY="809.0" mnemonicParsing="false" onAction="#toSceneFive" prefHeight="43.0" prefWidth="168.0" text="Spiel Starten &gt;" />
+      <Button fx:id="goToSceneFive" layoutX="927.0" layoutY="809.0" mnemonicParsing="false" onAction="#goToSceneFive" prefHeight="43.0" prefWidth="168.0" text="Spiel Starten &gt;" />
       <Circle fill="#9aff1f" layoutX="213.0" layoutY="538.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fill="#1fdfff" layoutX="213.0" layoutY="577.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fill="#5f1fff" layoutX="213.0" layoutY="620.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />

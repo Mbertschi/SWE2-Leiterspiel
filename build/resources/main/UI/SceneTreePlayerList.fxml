@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.FXMLControllerSceneTree">
+   <children>
+      <TextField layoutX="324.0" layoutY="52.0" prefHeight="205.0" prefWidth="594.0" text="Leiterspiel">
+         <font>
+            <Font size="96.0" />
+         </font>
+      </TextField>
+      <TextField layoutX="506.0" layoutY="277.0" prefHeight="51.0" prefWidth="217.0" text="by M&amp;R">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </TextField>
+      <TextField layoutX="250.0" layoutY="440.0" prefHeight="34.0" prefWidth="237.0" text="Spieler:">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </TextField>
+      <TextField layoutX="250.0" layoutY="525.0" promptText="Spieler" />
+      <TextField layoutX="250.0" layoutY="564.0" promptText="Spieler" />
+      <TextField layoutX="250.0" layoutY="607.0" promptText="Spieler" />
+      <TextField layoutX="473.0" layoutY="526.0" promptText="Spieler" />
+      <TextField layoutX="473.0" layoutY="565.0" promptText="Spieler" />
+      <TextField layoutX="473.0" layoutY="607.0" promptText="Spieler" />
+      <TextField layoutX="250.0" layoutY="647.0" promptText="Spieler" />
+      <Button fx:id="backToSceneTwo" layoutX="32.0" layoutY="803.0" mnemonicParsing="false" onAction="#backToSceneTwo" prefHeight="43.0" prefWidth="168.0" text="&lt; Zurück zu Spieler Name" />
+      <Button fx:id="goToSceneFive" layoutX="927.0" layoutY="809.0" mnemonicParsing="false" onAction="#goToSceneFive" prefHeight="43.0" prefWidth="168.0" text="Spiel Starten &gt;" />
+      <Circle fill="#9aff1f" layoutX="213.0" layoutY="538.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#1fdfff" layoutX="213.0" layoutY="577.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#5f1fff" layoutX="213.0" layoutY="620.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#ff4f1f" layoutX="448.0" layoutY="539.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#ff1fa2" layoutX="448.0" layoutY="577.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#ff1f1f" layoutX="448.0" layoutY="620.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#010e1b" layoutX="213.0" layoutY="660.0" radius="13.0" rotate="-141.3" stroke="BLACK" strokeType="INSIDE" />
+   </children>
+</Pane>
