@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="756.0" prefWidth="861.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.FXMLControllerSceneOne">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="756.0" prefWidth="861.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.FXMLControllerSceneSix">
    <children>
       <TextField layoutX="167.0" layoutY="56.0" prefHeight="205.0" prefWidth="594.0" text="Leiterspiel">
          <font>
@@ -24,8 +24,8 @@
             <Font size="28.0" />
          </font>
       </TextField>
-      <Button layoutX="88.0" layoutY="689.0" mnemonicParsing="false" onAction="#toSceneFive" prefHeight="36.0" prefWidth="89.0" text="Revange" />
+      <Button layoutX="88.0" layoutY="689.0" mnemonicParsing="false" onAction="#goToSceneFive" prefHeight="36.0" prefWidth="89.0" text="Revange" />
       <Button layoutX="363.0" layoutY="689.0" mnemonicParsing="false" onAction="#backToSceneOne" prefHeight="36.0" prefWidth="163.0" text="Spiel neu Starten" />
-      <Button layoutX="693.0" layoutY="689.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="137.0" text="Spiel beenden" />
+      <Button fx:id="beenden" layoutX="693.0" layoutY="689.0" mnemonicParsing="false" onAction="#closeProgramm" prefHeight="36.0" prefWidth="137.0" text="Spiel beenden" />
    </children>
 </Pane>

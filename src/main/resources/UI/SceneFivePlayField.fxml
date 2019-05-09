@@ -9,7 +9,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="895.0" prefWidth="1095.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.FXMLControllerSceneOne">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="894.0" prefWidth="1315.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.FXMLControllerSceneFive">
    <children>
       <Circle fill="#010e1b" layoutX="907.0" layoutY="692.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fill="#ff1f1f" layoutX="907.0" layoutY="638.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
@@ -24,7 +24,7 @@
       <TextField layoutX="934.0" layoutY="626.0" promptText="Spieler" />
       <TextField layoutX="934.0" layoutY="680.0" promptText="Spieler" />
       <TextField layoutX="934.0" layoutY="410.0" promptText="Spieler" />
-      <TextField layoutX="934.0" layoutY="356.0" promptText="Spieler" />
+      <TextField layoutX="932.0" layoutY="357.0" promptText="Spieler" />
       <TextField layoutX="314.0" layoutY="37.0" prefHeight="106.0" prefWidth="572.0" text="Leiterspiel ">
          <font>
             <Font size="96.0" />
@@ -1637,9 +1637,9 @@
             <Font size="36.0" />
          </font>
       </TextField>
-      <Button layoutX="824.0" layoutY="772.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="56.0" text="Würfel" />
-      <TextField layoutX="879.0" layoutY="772.0" prefHeight="56.0" prefWidth="56.0" promptText="gewürfelte Zahl" />
-      <Button fx:id="spielBeenden" layoutX="995.0" layoutY="828.0" mnemonicParsing="false" onAction="#toSceneSix" text="Spiel beenden" />
+      <Button layoutX="801.0" layoutY="745.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="56.0" text="Würfel" />
+      <TextField layoutX="858.0" layoutY="745.0" promptText="gewürfelte Zahl" />
+      <Button fx:id="spielBeenden" layoutX="872.0" layoutY="829.0" mnemonicParsing="false" onAction="#toSceneSix" text="Spiel beenden" />
    </children>
    <effect>
       <Blend />

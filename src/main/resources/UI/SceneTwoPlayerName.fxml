@@ -11,11 +11,11 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane cacheShape="false" centerShape="false" pickOnBounds="false" snapToPixel="false" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.FXMLControllerSceneOne">
+<Pane cacheShape="false" centerShape="false" pickOnBounds="false" snapToPixel="false" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.FXMLControllerSceneTwo">
    <children>
       <TextField fx:id="numbersOfPlayer" layoutX="336.0" layoutY="295.0" prefHeight="34.0" prefWidth="125.0" promptText="Spieler Anzahl" />
       <Button fx:id="toSceneTree" layoutX="596.0" layoutY="574.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#toSceneTree" prefHeight="43.0" prefWidth="168.0" text="Weiter &gt;" />
-      <Button fx:id="backToSceneTwo" layoutX="77.0" layoutY="574.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="340.0" text="&lt; Zurück zu Spieleranazahl" />
+      <Button fx:id="backToSceneTwo" layoutX="77.0" layoutY="574.0" mnemonicParsing="false" onAction="#backToSceneOne" prefHeight="51.0" prefWidth="340.0" text="&lt; Zurück zu Spieleranazahl" />
       <Label layoutX="294.0" layoutY="56.0" prefHeight="111.0" prefWidth="332.0" text="Leiterspiel">
          <font>
             <Font size="53.0" />
