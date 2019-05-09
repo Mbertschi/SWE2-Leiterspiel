@@ -33,6 +33,6 @@
       <TextField fx:id="amountPlayerTextfield" layoutX="665.0" layoutY="362.0" prefWidth="149.0" promptText="Spieler Anzahl" />
       <CheckBox layoutX="52.0" layoutY="459.0" mnemonicParsing="false" text="Mit Computer Spielen" />
       <Button fx:id="addAmountButton" layoutX="767.0" layoutY="504.0" mnemonicParsing="false" onAction="#addAmountButton" prefHeight="43.0" prefWidth="168.0" text="Weiter &gt;" />
-      <Label fx:id="label1" text="..." />
+      <Label fx:id="errorMessage" text="..." />
    </children>
 </Pane>

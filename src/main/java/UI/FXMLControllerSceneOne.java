@@ -24,31 +24,62 @@ import javafx.stage.Stage;
 
 public class FXMLControllerSceneOne {
 
+    // ToDo : Set error message on this label for output
     @FXML
-    private Label label1;
+    private Label errorMessage;
 
     @FXML
     private TextField amountPlayerTextfield;
 
 
+
     // Go to SceneTwo
     public void addAmountButton(ActionEvent event) throws IOException {
-        Parent sceneTwo = FXMLLoader.load(getClass().getResource("SceneTwoPlayerName.fxml"));
 
-        Scene windowSceneTwo = new Scene(sceneTwo);
-        // Stage Information
+        String amountPlayerValue = amountPlayerTextfield.getText();
+        // ToDo : Implement method Error Handler for input check
+        if(errorHandler(amountPlayerValue)) {
+            Parent sceneTwo = FXMLLoader.load(getClass().getResource("SceneTreePlayerList.fxml"));
 
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+            Scene windowSceneTwo = new Scene(sceneTwo);
+            // Stage Information
 
-        window.setScene(windowSceneTwo);
-        window.show();
+            Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 
+            window.setScene(windowSceneTwo);
+            window.show();
+        }
+        else {
+            this.errorMessage.setText("ERROR");
+        }
     }
 
+    // ToDo : Make check if amountPlayer is  not numerical
+    private boolean errorHandler(String amountPlayer) {
+        if(!amountPlayer.isEmpty()) {
+
+            // ToDo : here numerical check
+            Integer amountPlayerValue = Integer.valueOf(amountPlayer);
+            if(amountPlayerValue >= 2 && amountPlayerValue <= 8) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        else {
+            return false;
+        }
+    }
+
+    /*
     private void continueAmountPlayerButton() {
         MainController mainController = new MainController();
         int amountPlayerValue = Integer.parseInt(amountPlayerTextfield.getText());
-        mainController.SetAmountPlayer(amountPlayerValue);
+        return mainController.SetAmountPlayer(amountPlayerValue);
     }
+    */
+
+    // private void ErrorHandler()
 }
 
