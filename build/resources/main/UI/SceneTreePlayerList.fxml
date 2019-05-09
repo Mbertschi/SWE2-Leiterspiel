@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.shape.Circle?>
-<?import javafx.scene.text.Font?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.FXMLControllerSceneTree">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="662.0" minWidth="860.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.FXMLControllerSceneTree">
    <children>
-      <TextField layoutX="324.0" layoutY="52.0" prefHeight="205.0" prefWidth="594.0" text="Leiterspiel">
-         <font>
-            <Font size="96.0" />
-         </font>
-      </TextField>
-      <TextField layoutX="506.0" layoutY="277.0" prefHeight="51.0" prefWidth="217.0" text="by M&amp;R">
+      <TextField layoutX="132.0" layoutY="261.0" prefHeight="34.0" prefWidth="237.0" text="Spieler:">
          <font>
             <Font size="36.0" />
          </font>
       </TextField>
-      <TextField layoutX="250.0" layoutY="440.0" prefHeight="34.0" prefWidth="237.0" text="Spieler:">
+      <TextField layoutX="195.0" layoutY="372.0" promptText="Spieler" />
+      <TextField layoutX="195.0" layoutY="435.0" promptText="Spieler" />
+      <TextField layoutX="195.0" layoutY="501.0" promptText="Spieler" />
+      <TextField layoutX="556.0" layoutY="372.0" promptText="Spieler" />
+      <TextField layoutX="556.0" layoutY="435.0" promptText="Spieler" />
+      <TextField layoutX="556.0" layoutY="501.0" promptText="Spieler" />
+      <TextField layoutX="195.0" layoutY="565.0" prefHeight="37.0" prefWidth="237.0" promptText="Spieler" />
+      <Button fx:id="backToSceneTwo" layoutX="27.0" layoutY="606.0" mnemonicParsing="false" onAction="#backToSceneTwo" prefHeight="43.0" prefWidth="168.0" text="&lt; Zurück zu Spieler Name" />
+      <Button fx:id="goToSceneFive" layoutX="718.0" layoutY="606.0" mnemonicParsing="false" onAction="#goToSceneFive" prefHeight="43.0" prefWidth="168.0" text="Spiel Starten &gt;" />
+      <Circle fill="#9aff1f" layoutX="166.0" layoutY="397.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#1fdfff" layoutX="166.0" layoutY="460.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#5f1fff" layoutX="166.0" layoutY="527.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#ff4f1f" layoutX="524.0" layoutY="398.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#ff1fa2" layoutX="524.0" layoutY="461.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#ff1f1f" layoutX="524.0" layoutY="527.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#010e1b" layoutX="166.0" layoutY="591.0" radius="13.0" rotate="-141.3" stroke="BLACK" strokeType="INSIDE" />
+      <Label layoutX="354.0" layoutY="46.0" text="Leiterspiel">
+         <font>
+            <Font size="68.0" />
+         </font>
+      </Label>
+      <Label layoutX="443.0" layoutY="137.0" text="By R&amp;M">
          <font>
             <Font size="36.0" />
          </font>
-      </TextField>
-      <TextField layoutX="250.0" layoutY="525.0" promptText="Spieler" />
-      <TextField layoutX="250.0" layoutY="564.0" promptText="Spieler" />
-      <TextField layoutX="250.0" layoutY="607.0" promptText="Spieler" />
-      <TextField layoutX="473.0" layoutY="526.0" promptText="Spieler" />
-      <TextField layoutX="473.0" layoutY="565.0" promptText="Spieler" />
-      <TextField layoutX="473.0" layoutY="607.0" promptText="Spieler" />
-      <TextField layoutX="250.0" layoutY="647.0" promptText="Spieler" />
-      <Button fx:id="backToSceneTwo" layoutX="32.0" layoutY="803.0" mnemonicParsing="false" onAction="#backToSceneTwo" prefHeight="43.0" prefWidth="168.0" text="&lt; Zurück zu Spieler Name" />
-      <Button fx:id="goToSceneFive" layoutX="927.0" layoutY="809.0" mnemonicParsing="false" onAction="#goToSceneFive" prefHeight="43.0" prefWidth="168.0" text="Spiel Starten &gt;" />
-      <Circle fill="#9aff1f" layoutX="213.0" layoutY="538.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="#1fdfff" layoutX="213.0" layoutY="577.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="#5f1fff" layoutX="213.0" layoutY="620.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="#ff4f1f" layoutX="448.0" layoutY="539.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="#ff1fa2" layoutX="448.0" layoutY="577.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="#ff1f1f" layoutX="448.0" layoutY="620.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="#010e1b" layoutX="213.0" layoutY="660.0" radius="13.0" rotate="-141.3" stroke="BLACK" strokeType="INSIDE" />
+      </Label>
    </children>
 </Pane>

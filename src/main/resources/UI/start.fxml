@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
-<?import UI.FXMLControllerSceneTwo;
+
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.FXMLControllerSceneTwo">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.FXMLControllerSceneOne">
    <children>
       <TextField editable="false" layoutX="189.0" layoutY="41.0" prefHeight="205.0" prefWidth="594.0" text="Leiterspiel">
          <font>
@@ -32,7 +32,7 @@
       </TextField>
       <TextField fx:id="amountPlayerTextfield" layoutX="665.0" layoutY="362.0" prefWidth="149.0" promptText="Spieler Anzahl" />
       <CheckBox layoutX="52.0" layoutY="459.0" mnemonicParsing="false" text="Mit Computer Spielen" />
-      <Button fx:id="addAmountButton" layoutX="767.0" layoutY="504.0" mnemonicParsing="false" onAction="#loadSecond" prefHeight="43.0" prefWidth="168.0" text="Weiter &gt;" />
+      <Button fx:id="addAmountButton" layoutX="767.0" layoutY="504.0" mnemonicParsing="false" onAction="#addAmountButton" prefHeight="43.0" prefWidth="168.0" text="Weiter &gt;" />
       <Label fx:id="label1" text="..." />
    </children>
 </Pane>
