@@ -1,11 +1,7 @@
 package business;
 
-import persistence.MokInterfaceDataPlayer;
 
-
-
-
-
+import UI.FXMLControllerSceneOne;
 
 public class MainController {
 
@@ -20,6 +16,8 @@ public class MainController {
         public int getAmountPlayer() {
                 return amountPlayer;
         }
+
+
 
 
 
