@@ -34,10 +34,11 @@ public class FXMLControllerSceneOne {
 
 
 
-     String amountPlayerValue = amountPlayerTextfield.getText();
+
     // Go to SceneTwo
     public void addAmountButton(ActionEvent event) throws IOException {
 
+        String amountPlayerValue = amountPlayerTextfield.getText();
 
         // ToDo : Implement method Error Handler for input check
         if(errorHandler(amountPlayerValue)) {
