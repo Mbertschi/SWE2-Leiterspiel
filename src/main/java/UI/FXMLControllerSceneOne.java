@@ -18,37 +18,79 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 
 
 public class FXMLControllerSceneOne {
 
+    // ToDo : Set error message on this label for output
     @FXML
-    private Label label1;
+    private Label errorMessage;
 
     @FXML
     private TextField amountPlayerTextfield;
 
 
+
+
     // Go to SceneTwo
     public void addAmountButton(ActionEvent event) throws IOException {
-        Parent sceneTwo = FXMLLoader.load(getClass().getResource("SceneTwoPlayerName.fxml"));
 
-        Scene windowSceneTwo = new Scene(sceneTwo);
-        // Stage Information
+        String amountPlayerValue = amountPlayerTextfield.getText();
 
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        // ToDo : Move this and from all the controller the same code into the router (param: nameScene.xml)
+        // ToDo : Give the scenes and controllers a good name to understand without read their inside for what they are
+        if(errorHandler(amountPlayerValue)) {
+            Parent sceneTwo = FXMLLoader.load(getClass().getResource("SceneTreePlayerList.fxml"));
 
-        window.setScene(windowSceneTwo);
-        window.show();
+            Scene windowSceneTwo = new Scene(sceneTwo);
+            // Stage Information
 
+            Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+            window.setScene(windowSceneTwo);
+            window.show();
+        }
+        else {
+            this.errorMessage.setText("ERROR: Eingabe überprüfen");
+
+        }
     }
 
+    // ToDo : Put this into the abstract class gamerules in the business layer
+    private boolean errorHandler(String amountPlayer) {
+        if(!amountPlayer.isEmpty()) {
+            if(isNumeric(amountPlayer)) {
+                Integer amountPlayerValue = Integer.valueOf(amountPlayer);
+                if (amountPlayerValue >= 2 && amountPlayerValue <= 8) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }else{
+               return false;
+            }
+
+        }
+        else {
+            return false;
+        }
+    }
+
+    public static boolean isNumeric(String maybeNumeric){
+        return maybeNumeric != null &&  maybeNumeric.matches("[0-9]+");
+
+    }
+    /*
     private void continueAmountPlayerButton() {
         MainController mainController = new MainController();
         int amountPlayerValue = Integer.parseInt(amountPlayerTextfield.getText());
-        mainController.SetAmountPlayer(amountPlayerValue);
+        return mainController.SetAmountPlayer(amountPlayerValue);
     }
+    */
+
+    // private void ErrorHandler()
 }
 

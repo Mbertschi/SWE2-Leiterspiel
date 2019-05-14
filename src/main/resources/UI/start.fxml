@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
-
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -30,9 +29,12 @@
             <Font size="31.0" />
          </font>
       </TextField>
-      <TextField fx:id="amountPlayerTextfield" layoutX="665.0" layoutY="362.0" prefWidth="149.0" promptText="Spieler Anzahl" />
+      <TextField fx:id="amountPlayerTextfield" layoutX="665.0" layoutY="362.0" prefWidth="149.0" promptText="Spieler Anzahl  2-8" />
       <CheckBox layoutX="52.0" layoutY="459.0" mnemonicParsing="false" text="Mit Computer Spielen" />
       <Button fx:id="addAmountButton" layoutX="767.0" layoutY="504.0" mnemonicParsing="false" onAction="#addAmountButton" prefHeight="43.0" prefWidth="168.0" text="Weiter &gt;" />
-      <Label fx:id="label1" text="..." />
+      <Label fx:id="errorMessage" layoutX="22.0" layoutY="540.0" text="..." textFill="#f50707">
+         <font>
+            <Font size="19.0" />
+         </font></Label>
    </children>
 </Pane>

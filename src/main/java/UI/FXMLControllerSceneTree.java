@@ -12,7 +12,7 @@ import java.io.IOException;
 public class FXMLControllerSceneTree {
     // Back to SceneTwo
     public void backToSceneTwo(ActionEvent event) throws IOException {
-        Parent sceneTwo = FXMLLoader.load(getClass().getResource("SceneTwoPlayerName.fxml"));
+        Parent sceneTwo = FXMLLoader.load(getClass().getResource("start.fxml"));
         Scene windowSceneTwo = new Scene(sceneTwo);
         // Stage Information
         Stage window2 = (Stage)((Node)event.getSource()).getScene().getWindow();
