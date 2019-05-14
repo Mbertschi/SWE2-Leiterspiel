@@ -40,7 +40,8 @@ public class FXMLControllerSceneOne {
 
         String amountPlayerValue = amountPlayerTextfield.getText();
 
-        // ToDo : Implement method Error Handler for input check
+        // ToDo : Move this and from all the controller the same code into the router (param: nameScene.xml)
+        // ToDo : Give the scenes and controllers a good name to understand without read their inside for what they are
         if(errorHandler(amountPlayerValue)) {
             Parent sceneTwo = FXMLLoader.load(getClass().getResource("SceneTreePlayerList.fxml"));
 
@@ -58,11 +59,10 @@ public class FXMLControllerSceneOne {
         }
     }
 
-    // ToDo : Make check if amountPlayer is  not numerical
+    // ToDo : Put this into the abstract class gamerules in the business layer
     private boolean errorHandler(String amountPlayer) {
         if(!amountPlayer.isEmpty()) {
             if(isNumeric(amountPlayer)) {
-                // ToDo : here numerical check
                 Integer amountPlayerValue = Integer.valueOf(amountPlayer);
                 if (amountPlayerValue >= 2 && amountPlayerValue <= 8) {
                     return true;
