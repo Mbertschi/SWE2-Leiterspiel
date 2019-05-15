@@ -8,6 +8,7 @@ import java.util.ResourceBundle;
 
 import business.MainController;
 import business.Player;
+import business.Rules;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -41,19 +42,11 @@ public class FXMLControllerSceneOneInizialisizePlayers {
         String amountPlayerValue = amountPlayerTextfield.getText();
 
         // ToDo 1): Move this and from all the controller the same code into the router (param: nameScene.xml)
-        // ToDo 2): Give the scenes and controllers a good name to understand without read their inside for what they are
-        if(errorHandler(amountPlayerValue)) {
-            // start
-            Parent sceneTwo = FXMLLoader.load(getClass().getResource("SceneTreePlayerListAndStartGame.fxml"));
 
-            Scene windowSceneTwo = new Scene(sceneTwo);
-            // Stage Information
+        if(Rules.validateNumberOfPlayer(amountPlayerValue)) {
 
-            Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-
-            window.setScene(windowSceneTwo);
-            window.show();
-            //end
+            Router router =new Router();
+            router.toNextScene(event, "SceneTreePlayerListAndStartGame");
         }
         else {
             this.errorMessage.setText("ERROR: Eingabe überprüfen");
@@ -62,29 +55,9 @@ public class FXMLControllerSceneOneInizialisizePlayers {
     }
 
     // ToDo : Put this into the abstract class gamerules in the business layer
-    private boolean errorHandler(String amountPlayer) {
-        if(!amountPlayer.isEmpty()) {
-            if(isNumeric(amountPlayer)) {
-                Integer amountPlayerValue = Integer.valueOf(amountPlayer);
-                if (amountPlayerValue >= 2 && amountPlayerValue <= 8) {
-                    return true;
-                } else {
-                    return false;
-                }
-            }else{
-               return false;
-            }
 
-        }
-        else {
-            return false;
-        }
-    }
 
-    public static boolean isNumeric(String maybeNumeric){
-        return maybeNumeric != null &&  maybeNumeric.matches("[0-9]+");
 
-    }
     /*
     private void continueAmountPlayerButton() {
         MainController mainController = new MainController();
