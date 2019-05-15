@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class FXMLControllerSceneFive {
+public class FXMLControllerSceneFivePlayfield {
     // To SceneSix
     public void toSceneSix(ActionEvent event) throws IOException {
         Parent sceneSix = FXMLLoader.load(getClass().getResource("SceneSixRankingAndRestart.fxml"));

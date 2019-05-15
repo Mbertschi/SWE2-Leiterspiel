@@ -23,7 +23,7 @@ import javafx.stage.Stage;
 
 
 
-public class FXMLControllerSceneOne {
+public class FXMLControllerSceneOneInizialisizePlayers {
 
     // ToDo : Set error message on this label for output
     @FXML
@@ -40,10 +40,11 @@ public class FXMLControllerSceneOne {
 
         String amountPlayerValue = amountPlayerTextfield.getText();
 
-        // ToDo : Move this and from all the controller the same code into the router (param: nameScene.xml)
-        // ToDo : Give the scenes and controllers a good name to understand without read their inside for what they are
+        // ToDo 1): Move this and from all the controller the same code into the router (param: nameScene.xml)
+        // ToDo 2): Give the scenes and controllers a good name to understand without read their inside for what they are
         if(errorHandler(amountPlayerValue)) {
-            Parent sceneTwo = FXMLLoader.load(getClass().getResource("SceneTreePlayerList.fxml"));
+            // start
+            Parent sceneTwo = FXMLLoader.load(getClass().getResource("SceneTreePlayerListAndStartGame.fxml"));
 
             Scene windowSceneTwo = new Scene(sceneTwo);
             // Stage Information
@@ -52,6 +53,7 @@ public class FXMLControllerSceneOne {
 
             window.setScene(windowSceneTwo);
             window.show();
+            //end
         }
         else {
             this.errorMessage.setText("ERROR: Eingabe überprüfen");

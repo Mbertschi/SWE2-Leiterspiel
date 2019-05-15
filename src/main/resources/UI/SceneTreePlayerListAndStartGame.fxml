@@ -6,7 +6,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="662.0" minWidth="860.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.FXMLControllerSceneTree">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="662.0" minWidth="860.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.FXMLControllerSceneTreePlayerListAndStartGame">
    <children>
       <TextField layoutX="132.0" layoutY="261.0" prefHeight="34.0" prefWidth="237.0" text="Spieler:">
          <font>
