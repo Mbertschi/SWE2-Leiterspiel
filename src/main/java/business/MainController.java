@@ -11,13 +11,4 @@ public class MainController {
                 this.amountPlayer = amountPlayer;
         }
 
-        public int getAmountPlayer() {
-                return amountPlayer;
-        }
-
-
-
-
-
-
 }

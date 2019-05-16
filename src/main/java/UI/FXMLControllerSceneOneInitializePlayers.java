@@ -24,7 +24,7 @@ import javafx.stage.Stage;
 
 
 
-public class FXMLControllerSceneOneInizialisizePlayers {
+public class FXMLControllerSceneOneInitializePlayers {
 
     // ToDo : Set error message on this label for output
     @FXML
@@ -33,13 +33,15 @@ public class FXMLControllerSceneOneInizialisizePlayers {
     @FXML
     private TextField amountPlayerTextfield;
 
+    @FXML
+    private TextField playerName;
 
 
 
     // Go to SceneTwo
-    public void addAmountButton(ActionEvent event) throws IOException {
+    public  void addAmountButton(ActionEvent event) throws IOException {
 
-        String amountPlayerValue = amountPlayerTextfield.getText();
+         String amountPlayerValue = amountPlayerTextfield.getText();
 
         // ToDo 1): Move this and from all the controller the same code into the router (param: nameScene.xml)
 
@@ -47,6 +49,10 @@ public class FXMLControllerSceneOneInizialisizePlayers {
 
             Router router =new Router();
             router.toNextScene(event, "SceneTreePlayerListAndStartGame");
+
+            Player player = new Player("");
+
+            player.createPlayer(amountPlayerValue);
         }
         else {
             this.errorMessage.setText("ERROR: Eingabe überprüfen");

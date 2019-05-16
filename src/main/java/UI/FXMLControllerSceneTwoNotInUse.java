@@ -23,7 +23,7 @@ public class FXMLControllerSceneTwoNotInUse {
 
     //Back to SceneOne
     public void backToSceneOne(ActionEvent event) throws IOException {
-        Parent sceneTwo = FXMLLoader.load(getClass().getResource("SceneOneInizilisizePlayers.fxml"));
+        Parent sceneTwo = FXMLLoader.load(getClass().getResource("SceneOneInitializePlayers.fxml"));
 
         Scene windowSceneTwo = new Scene(sceneTwo);
 

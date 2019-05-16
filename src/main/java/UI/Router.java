@@ -14,11 +14,11 @@ public class Router {
     public void toNextScene(ActionEvent event, String fxmlScene )throws IOException {
 
 
-        Parent sceneTwo = FXMLLoader.load(getClass().getResource(fxmlScene+".fxml"));
-        Scene windowSceneTwo = new Scene(sceneTwo);
+        Parent scene = FXMLLoader.load(getClass().getResource(fxmlScene+".fxml"));
+        Scene windowScene = new Scene(scene);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 
-        window.setScene(windowSceneTwo);
+        window.setScene(windowScene);
         window.show();
     }
 
