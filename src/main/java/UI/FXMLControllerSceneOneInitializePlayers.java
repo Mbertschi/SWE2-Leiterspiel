@@ -19,6 +19,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
+import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
@@ -48,7 +49,7 @@ public class FXMLControllerSceneOneInitializePlayers {
         if(Rules.validateNumberOfPlayer(amountPlayerValue)) {
 
             Router router =new Router();
-            router.toNextScene(event, "SceneTreePlayerListAndStartGame");
+            router.toNextScene(event, "SceneTreePlayerListAndStartGame", true);
 
             Player player = new Player("");
 
