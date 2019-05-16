@@ -1,29 +1,23 @@
 package UI;
 
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.stage.Stage;
-import javafx.stage.Window;
 
-import java.awt.*;
 import java.io.IOException;
 
-public class FXMLControllerSceneSix {
-    //Back to SceneOne
-    public void backToSceneOne(ActionEvent event) throws IOException {
-        Parent sceneTwo = FXMLLoader.load(getClass().getResource("start.fxml"));
-
+public class FXMLControllerSceneTreePlayerListAndStartGame {
+    // Back to SceneTwo
+    public void backToSceneTwo(ActionEvent event) throws IOException {
+        Parent sceneTwo = FXMLLoader.load(getClass().getResource("SceneOneInitializePlayers.fxml"));
         Scene windowSceneTwo = new Scene(sceneTwo);
-
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-
-        window.setScene(windowSceneTwo);
-        window.show();
+        // Stage Information
+        Stage window2 = (Stage)((Node)event.getSource()).getScene().getWindow();
+        window2.setScene(windowSceneTwo);
+        window2.show();
 
     }
     //Go to SceneFive
@@ -35,9 +29,4 @@ public class FXMLControllerSceneSix {
         window.show();
 
     }
-
-    //Applikation beenden
-
-
 }
-

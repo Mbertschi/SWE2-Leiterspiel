@@ -9,10 +9,10 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class FXMLControllerSceneTwo {
+public class FXMLControllerSceneTwoNotInUse {
 
     public void toSceneTree(ActionEvent event) throws IOException {
-        Parent sceneTree = FXMLLoader.load(getClass().getResource("SceneTreePlayerList.fxml"));
+        Parent sceneTree = FXMLLoader.load(getClass().getResource("SceneTreePlayerListAndStartGame.fxml"));
         Scene windowSceneTwo = new Scene(sceneTree);
         // Stage Information
         Stage window2 = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -23,7 +23,7 @@ public class FXMLControllerSceneTwo {
 
     //Back to SceneOne
     public void backToSceneOne(ActionEvent event) throws IOException {
-        Parent sceneTwo = FXMLLoader.load(getClass().getResource("start.fxml"));
+        Parent sceneTwo = FXMLLoader.load(getClass().getResource("SceneOneInitializePlayers.fxml"));
 
         Scene windowSceneTwo = new Scene(sceneTwo);
 

@@ -1,8 +1,6 @@
 package business;
 
 
-import UI.FXMLControllerSceneOne;
-
 public class MainController {
 
         public MainController(){}
@@ -12,14 +10,5 @@ public class MainController {
         public void SetAmountPlayer(int amountPlayer) {
                 this.amountPlayer = amountPlayer;
         }
-
-        public int getAmountPlayer() {
-                return amountPlayer;
-        }
-
-
-
-
-
 
 }
