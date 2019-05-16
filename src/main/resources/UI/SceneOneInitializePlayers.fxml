@@ -10,7 +10,7 @@
       <Label layoutX="100.0" layoutY="150.0" text="Bitte geben Sie die Anzahl Spieler ein"></Label>
       <TextField fx:id="amountPlayerTextfield" layoutX="100.0" layoutY="180.0" prefWidth="150.0" promptText="Spieler Anzahl  2-8" />
       <CheckBox layoutX="100.0" layoutY="230.0" mnemonicParsing="false" text="Zusätzlich mit Computer Spielen" />
-      <Button fx:id="addAmountButton" layoutX="767.0" layoutY="504.0" mnemonicParsing="false" onAction="#addAmountButton" prefHeight="43.0" prefWidth="168.0" text="Weiter &gt;" />
+      <Button fx:id="addAmountButton" layoutX="810.0" layoutY="530.0" mnemonicParsing="false" onAction="#addAmountButton" prefHeight="43.0" prefWidth="168.0" text="Weiter &gt;" />
       <Label fx:id="errorMessage" layoutX="22.0" layoutY="540.0" text="..." textFill="#f50707">
          <font>
             <Font size="19.0" />
