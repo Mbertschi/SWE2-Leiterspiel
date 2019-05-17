@@ -6,6 +6,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import business.Converter;
 import business.MainController;
 import business.Player;
 import business.Rules;
@@ -45,15 +46,10 @@ public class FXMLControllerSceneOneInitializePlayers {
          String amountPlayerValue = amountPlayerTextfield.getText();
 
         // ToDo 1): Move this and from all the controller the same code into the router (param: nameScene.xml)
-
         if(Rules.validateNumberOfPlayer(amountPlayerValue)) {
-
-            Router router =new Router();
-            router.toNextScene(event, "SceneTreePlayerListAndStartGame", true);
-
-            Player player = new Player("");
-
-            player.createPlayer(amountPlayerValue);
+            Integer amountPlayers = Converter.convertStringToInt(amountPlayerValue);
+            Router router = Router.getInstance();
+            router.toNextScene(event, "SceneTreePlayerListAndStartGame", amountPlayers);
         }
         else {
             this.errorMessage.setText("ERROR: Eingabe überprüfen");
@@ -64,15 +60,5 @@ public class FXMLControllerSceneOneInitializePlayers {
     // ToDo : Put this into the abstract class gamerules in the business layer
 
 
-
-    /*
-    private void continueAmountPlayerButton() {
-        MainController mainController = new MainController();
-        int amountPlayerValue = Integer.parseInt(amountPlayerTextfield.getText());
-        return mainController.SetAmountPlayer(amountPlayerValue);
-    }
-    */
-
-    // private void ErrorHandler()
 }
 

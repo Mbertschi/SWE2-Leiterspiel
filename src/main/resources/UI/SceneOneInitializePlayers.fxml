@@ -3,10 +3,17 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
 
+<?import javafx.scene.image.ImageView?>
 <Pane prefHeight="600.0" maxHeight="600" prefWidth="1000.0" maxWidth="1000" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.FXMLControllerSceneOneInitializePlayers">
    <children>
       <fx:include source="header.fxml"/>
+      <!--
+      <ImageView fitHeight="50.0">
+         <image><Image url="@images/errorcheck.png"></Image></image>
+      </ImageView>
+      -->
       <Label layoutX="100.0" layoutY="150.0" text="Bitte geben Sie die Anzahl Spieler ein"></Label>
       <TextField fx:id="amountPlayerTextfield" layoutX="100.0" layoutY="180.0" prefWidth="150.0" promptText="Spieler Anzahl  2-8" />
       <CheckBox layoutX="100.0" layoutY="230.0" mnemonicParsing="false" text="Zusätzlich mit Computer Spielen" />

@@ -11,12 +11,31 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
 import java.awt.*;
 import java.io.IOException;
+import java.util.Random;
 
 public class Router {
+
+    private static Router setInstance = new Router();
+    public static Router getInstance() {
+        return setInstance;
+    }
+
+    @FXML
+    private Pane dynamicPane;
+
+    private void setPane(Pane pane) {
+        this.dynamicPane = pane;
+    }
+
+    public Pane getPane() {
+        return this.dynamicPane;
+    }
 
     public void toNextScene(ActionEvent event, String fxmlScene)throws IOException {
 
@@ -28,24 +47,50 @@ public class Router {
         window.show();
     }
 
-    public void toNextScene(ActionEvent event, String fxmlScene, Boolean createPlayerInputs)throws IOException {
+    public void toNextScene(ActionEvent event, String fxmlScene, Integer amountPlayers)throws IOException {
 
-        if(createPlayerInputs) {
-            Parent scene = FXMLLoader.load(getClass().getResource(fxmlScene+".fxml"));
-            // new add textfield to pane
-            TextField tf = new TextField();
-            GridPane pane = new GridPane();
+        Parent scene = FXMLLoader.load(getClass().getResource(fxmlScene+".fxml"));
+        // new add textfield to pane
 
-            pane.getChildren().add(scene);
-            pane.getChildren().add(tf);
+        Pane pane = new Pane();
+        pane.getChildren().add(scene);
 
-            Scene windowScene = new Scene(pane);
+        for (int x = 0; x < amountPlayers; x++) {
+            // add circles
+            Circle circle = new Circle();
+            circle.setRadius(10);
+            Random rand = new Random();
+            Double r = rand.nextDouble();
+            Double g = rand.nextDouble();
+            Double b = rand.nextDouble();
+            Color randomColor = new Color(r,g,b,1.0);
+            circle.setFill(randomColor);
+            circle.setStroke(Color.BLACK);
 
-            Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+            // add textfields
+            Double xValue = 100.0;
+            Double yValue = 180 + x * 40.0;
+            Integer playerNumber = x + 1;
+            TextField textfield = new TextField("Spieler " + playerNumber);
+            textfield.setLayoutX(xValue);
+            textfield.setLayoutY(yValue);
 
-            window.setScene(windowScene);
-            window.show();
+            Double circleXValue = xValue - 30;
+            Double circleYValue = yValue + 13.5;
+            circle.setLayoutX(circleXValue);
+            circle.setLayoutY(circleYValue);
+
+            pane.getChildren().add(textfield);
+            pane.getChildren().add(circle);
+            this.setPane(pane);
         }
+
+        Scene windowScene = new Scene(pane);
+
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+        window.setScene(windowScene);
+        window.show();
     }
 
 
