@@ -1,18 +1,20 @@
 package UI;
 
 import business.Dice;
+import business.Player;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
-
+import persistence.PlayerList;
 
 
 import java.io.IOException;
@@ -70,7 +72,7 @@ public class Router {
             Double xValue = 100.0;
             Double yValue = 180 + x * 40.0;
             Integer playerNumber = x + 1;
-            TextField textfield = new TextField("Spieler " + playerNumber);
+            TextField textfield = new TextField("Spieler"+ playerNumber);
             textfield.setLayoutX(xValue);
             textfield.setLayoutY(yValue);
 
@@ -84,13 +86,8 @@ public class Router {
             this.setPane(pane);
         }
 
-
-
         Scene windowScene = new Scene(pane);
-
-
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-
         window.setScene(windowScene);
         window.show();
     }
@@ -102,20 +99,16 @@ public class Router {
 
         Pane pane = new Pane();
         pane.getChildren().add(scene);
-
         dice.setTranslateX(800);
         dice.setTranslateY(800);
         pane.getChildren().add(dice);
+        PlayerList.getInstance().showList().setTranslateX(900);
+        PlayerList.getInstance().showList().setTranslateY(400);
+        pane.getChildren().add(PlayerList.getInstance().showList());
 
-
-
-
-
+       // PlayerList.getInstance().showList();
         Scene windowScene = new Scene(pane);
-
-
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-
         window.setScene(windowScene);
         window.show();
     }

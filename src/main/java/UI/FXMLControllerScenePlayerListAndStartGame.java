@@ -1,13 +1,13 @@
 package UI;
 
 
+import business.Player;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import javafx.scene.layout.Pane;
 import javafx.scene.control.TextField;
+import persistence.PlayerList;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class FXMLControllerScenePlayerListAndStartGame {
 
@@ -20,17 +20,19 @@ public class FXMLControllerScenePlayerListAndStartGame {
     //Go to SceneFive
     public void goToSceneFive(ActionEvent event) throws IOException {
 
-        List<String> playerNames = new ArrayList<>();
+
         Pane pane = Router.getInstance().getPane();
         for (Node child : pane.getChildren()) {
             if (child instanceof TextField) {
                 // ToDo : Save in Persistence from mainController in business
                 String playerName = ((TextField) child).getText();
-                playerNames.add(playerName);
+                Player player = new Player(playerName);
+                PlayerList.getInstance().addPlayerToList(player);
             }
         }
-        System.out.println(playerNames);
+        PlayerList.getInstance().showList();
         router.toPlayfielScene(event,"ScenePlayfield");
+
     }
 
 

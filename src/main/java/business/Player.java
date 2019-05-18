@@ -2,8 +2,9 @@ package business;
 
 
 import javafx.scene.control.TextField;
+import persistence.PlayerList;
 
-import java.util.ArrayList;
+
 import java.util.Scanner;
 
 public class Player implements PlayerInterface{
@@ -41,32 +42,29 @@ public class Player implements PlayerInterface{
 
     @Override
     public void updatePlayer() {
-        Scanner playerName = new Scanner(System.in);
 
     }
+
 
     @Override
     public void displayPlayer() {
-
+        PlayerList.getInstance().showList();
     }
 
-    public TextField createPlayer(String nubmerOfPlayer){
-
-        int playerNumbers = Integer.parseInt(nubmerOfPlayer);
-
-        for(int i = 0; i <= playerNumbers; i++){
-
-            createTexfield(i);
-
-        }
-        return new TextField();
-    }
-
-    public TextField createTexfield( int s){
+//    public Player createPlayer(String nubmerOfPlayer){
+//        Player player = new Player("");
+//        int playerNumbers = Integer.parseInt(nubmerOfPlayer);
+//
+//        for(int i = 0; i <= playerNumbers; i++){
+//
+//            new Player("");
+//
+//        }
+//        return player;
+//    }
 
 
-        return new TextField("Spielername"+s);
-    }
+
 }
 
 

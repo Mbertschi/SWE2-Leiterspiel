@@ -2,7 +2,6 @@ package business;
 
 import javafx.animation.RotateTransition;
 import javafx.beans.property.SimpleIntegerProperty;
-import javafx.geometry.Pos;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
