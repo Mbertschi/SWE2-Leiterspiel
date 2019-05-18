@@ -24,11 +24,11 @@ public class FXMLControllerScenePlayerListAndStartGame {
         Pane pane = Router.getInstance().getPane();
         for (Node child : pane.getChildren()) {
             if (child instanceof TextField) {
-                // ToDo : Save in Persistence from mainController in business
                 String playerName = ((TextField) child).getText();
                 Player player = new Player(playerName);
                 PlayerList.getInstance().addPlayerToList(player);
             }
+
         }
         PlayerList.getInstance().showList();
         router.toPlayfielScene(event,"ScenePlayfield");

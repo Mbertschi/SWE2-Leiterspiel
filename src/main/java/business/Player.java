@@ -18,14 +18,10 @@ public class Player implements PlayerInterface{
 
     }
 
-
     @Override
     public String toString() {
-        return "Player{" +
-                "name='" + name + '\'' +
-                '}';
+        return this.name;
     }
-
 
     public String getName() {
         return name;
