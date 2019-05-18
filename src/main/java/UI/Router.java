@@ -1,5 +1,6 @@
 package UI;
 
+import business.Dice;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -7,15 +8,13 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
-import java.awt.*;
+
+
 import java.io.IOException;
 import java.util.Random;
 
@@ -85,13 +84,43 @@ public class Router {
             this.setPane(pane);
         }
 
+
+
         Scene windowScene = new Scene(pane);
+
 
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 
         window.setScene(windowScene);
         window.show();
     }
+
+    public void toPlayfielScene(ActionEvent event, String fxmlScene)throws IOException {
+        Dice dice = new Dice();
+        Parent scene = FXMLLoader.load(getClass().getResource(fxmlScene+".fxml"));
+        // add Dice to Scene
+
+        Pane pane = new Pane();
+        pane.getChildren().add(scene);
+
+        dice.setTranslateX(800);
+        dice.setTranslateY(800);
+        pane.getChildren().add(dice);
+
+
+
+
+
+        Scene windowScene = new Scene(pane);
+
+
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+        window.setScene(windowScene);
+        window.show();
+    }
+
+
 
 
 

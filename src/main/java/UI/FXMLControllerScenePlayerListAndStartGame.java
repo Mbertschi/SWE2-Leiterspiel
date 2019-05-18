@@ -1,30 +1,20 @@
 package UI;
 
-import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.layout.Pane;
-import javafx.stage.Stage;
-import javafx.scene.control.TextField;
-import org.w3c.dom.Text;
 
-import javax.lang.model.element.Element;
+import javafx.event.ActionEvent;
+import javafx.scene.Node;
+import javafx.scene.layout.Pane;
+import javafx.scene.control.TextField;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FXMLControllerSceneTreePlayerListAndStartGame {
+public class FXMLControllerScenePlayerListAndStartGame {
+
+    Router router = new Router();
     // Back to SceneTwo
     public void backToSceneTwo(ActionEvent event) throws IOException {
-        Parent sceneTwo = FXMLLoader.load(getClass().getResource("SceneOneInitializePlayers.fxml"));
-        Scene windowSceneTwo = new Scene(sceneTwo);
-        // Stage Information
-        Stage window2 = (Stage)((Node)event.getSource()).getScene().getWindow();
-        window2.setScene(windowSceneTwo);
-        window2.show();
+       router.toNextScene(event,"SceneInitializePlayers");
 
     }
     //Go to SceneFive
@@ -40,11 +30,12 @@ public class FXMLControllerSceneTreePlayerListAndStartGame {
             }
         }
         System.out.println(playerNames);
+        router.toPlayfielScene(event,"ScenePlayfield");
     }
 
-    // ToDo : change methods to the router
-    // ToDo : add image as playrules (römisch) to scene
-    // ToDo : Refactor scene name
+
+
+
     // ToDo : delete unused import classes
 
 }

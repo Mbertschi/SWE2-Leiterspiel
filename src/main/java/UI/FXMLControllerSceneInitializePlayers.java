@@ -26,7 +26,7 @@ import javafx.stage.Stage;
 
 
 
-public class FXMLControllerSceneOneInitializePlayers {
+public class FXMLControllerSceneInitializePlayers {
 
     // ToDo : Set error message on this label for output
     @FXML
@@ -49,7 +49,7 @@ public class FXMLControllerSceneOneInitializePlayers {
         if(Rules.validateNumberOfPlayer(amountPlayerValue)) {
             Integer amountPlayers = Converter.convertStringToInt(amountPlayerValue);
             Router router = Router.getInstance();
-            router.toNextScene(event, "SceneTreePlayerListAndStartGame", amountPlayers);
+            router.toNextScene(event, "ScenePlayerListAndStartGame", amountPlayers);
         }
         else {
             this.errorMessage.setText("ERROR: Eingabe überprüfen");
