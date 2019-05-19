@@ -18,7 +18,7 @@ public class MainApp extends Application {
         scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
 
         // Test...delete this line
-        stage.setTitle("JavaFX and Gradle");
+        stage.setTitle("Leiterspiel - von R & M");
         stage.setScene(scene);
         stage.show();
     }

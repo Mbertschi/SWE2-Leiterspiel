@@ -92,18 +92,18 @@ public class Router {
         window.show();
     }
 
-    public void toPlayfielScene(ActionEvent event, String fxmlScene)throws IOException {
+    public void toPlayfieldScene(ActionEvent event, String fxmlScene)throws IOException {
         Dice dice = new Dice();
         Parent scene = FXMLLoader.load(getClass().getResource(fxmlScene+".fxml"));
         // add Dice to Scene
 
         Pane pane = new Pane();
         pane.getChildren().add(scene);
-        dice.setTranslateX(800);
-        dice.setTranslateY(800);
+        dice.setTranslateX(500);
+        dice.setTranslateY(500);
         pane.getChildren().add(dice);
-        PlayerList.getInstance().showList().setTranslateX(900);
-        PlayerList.getInstance().showList().setTranslateY(400);
+        PlayerList.getInstance().showList().setTranslateX(700);
+        PlayerList.getInstance().showList().setTranslateY(100);
         pane.getChildren().add(PlayerList.getInstance().showList());
 
        // PlayerList.getInstance().showList();
