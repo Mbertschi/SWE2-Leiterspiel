@@ -2,6 +2,7 @@ package UI;
 
 import business.Dice;
 import business.Player;
+import business.Playfield;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,7 +11,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.Pane;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
@@ -95,10 +96,11 @@ public class Router {
     public void toPlayfieldScene(ActionEvent event, String fxmlScene)throws IOException {
         Dice dice = new Dice();
         Parent scene = FXMLLoader.load(getClass().getResource(fxmlScene+".fxml"));
-        // add Dice to Scene
 
         Pane pane = new Pane();
         pane.getChildren().add(scene);
+
+        // add Dice to Scene
         dice.setTranslateX(500);
         dice.setTranslateY(500);
         pane.getChildren().add(dice);
@@ -106,11 +108,19 @@ public class Router {
         PlayerList.getInstance().showList().setTranslateY(100);
         pane.getChildren().add(PlayerList.getInstance().showList());
 
-       // PlayerList.getInstance().showList();
+        // add playField to Scene
+        Playfield playfield = new Playfield();
+        GridPane gp = playfield.CreateLevelOne();
+        pane.getChildren().add(gp);
+
+        // PlayerList.getInstance().showList();
         Scene windowScene = new Scene(pane);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         window.setScene(windowScene);
         window.show();
+
+        //List<Cell> cells = new ArrayList<>();
+
     }
 
 
