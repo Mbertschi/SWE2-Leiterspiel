@@ -12,7 +12,7 @@ public class MainController {
         }
 
         public void addPlayerToList(Player player){
-                 new Player("").addPlayertoList(player);
+                 new Player().addPlayertoList(player);
         }
 
 }

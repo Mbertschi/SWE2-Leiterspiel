@@ -1,25 +1,26 @@
 package UI;
 
-import business.ColorCircle;
-import business.Dice;
-import business.Player;
-import business.Playfield;
+import business.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import persistence.PlayerList;
 
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class Router {
@@ -31,13 +32,19 @@ public class Router {
 
     @FXML
     private Pane dynamicPane;
-
     private void setPane(Pane pane) {
         this.dynamicPane = pane;
     }
-
     public Pane getPane() {
         return this.dynamicPane;
+    }
+
+    private List<Circle> playerCircles;
+    private void setPlayerCircles(Circle colorCircle) {
+        this.playerCircles.add(colorCircle);
+    }
+    public List<Circle> getPlayerCircles() {
+        return this.playerCircles;
     }
 
     public void toNextScene(ActionEvent event, String fxmlScene)throws IOException {
@@ -57,6 +64,7 @@ public class Router {
 
         Pane pane = new Pane();
         pane.getChildren().add(scene);
+        this.playerCircles = new ArrayList<>();
 
         for (int x = 0; x < amountPlayers; x++) {
             // add textfields
@@ -68,6 +76,9 @@ public class Router {
             textfield.setLayoutY(yValue);
             // add Circles
             Circle circle = new ColorCircle().createCircle();
+
+            this.setPlayerCircles(circle);
+
             Double circleXValue = xValue - 30;
             Double circleYValue = yValue + 13.5;
             circle.setLayoutX(circleXValue);
@@ -96,10 +107,45 @@ public class Router {
         dice.setTranslateX(500);
         dice.setTranslateY(500);
         pane.getChildren().add(dice);
-        Player player = new Player("");
-        PlayerList.getInstance().showList().setTranslateX(700);
-        PlayerList.getInstance().showList().setTranslateY(100);
-        pane.getChildren().add(player.displayPlayer());
+
+        GridPane playerPane = new GridPane();
+        playerPane.setPrefHeight(350);
+        playerPane.setPrefWidth(200);
+        playerPane.setLayoutX(850);
+        playerPane.setLayoutY(150);
+
+        ColumnConstraints col1 = new ColumnConstraints();
+        col1.setMinWidth(25);
+        ColumnConstraints col2 = new ColumnConstraints();
+        col2.setMinWidth(175);
+
+        RowConstraints row1 = new RowConstraints();
+        row1.setMinHeight(50);
+        RowConstraints row2 = new RowConstraints();
+        row2.setMinHeight(50);
+
+        playerPane.getColumnConstraints().addAll(col1,col2);
+        playerPane.getRowConstraints().addAll(row1,row2);
+
+        Player player = new Player();
+
+        for(int i = 0; i < PlayerList.getInstance().sizeOfList(); i++){
+
+            player = player.getPlayer(i);
+
+            Circle circle = player.getCircle();
+            playerPane.setConstraints(circle, 0, i);
+            playerPane.getChildren().addAll(circle);
+
+            Label label = new Label();
+            label.setText(player.getName());
+            playerPane.setConstraints(label, 1, i);
+            playerPane.getChildren().addAll(label);
+
+
+        }
+
+        pane.getChildren().add(playerPane);
 
         // add playField to Scene
         Playfield playfield = new Playfield();

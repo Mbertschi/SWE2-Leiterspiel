@@ -2,23 +2,22 @@ package business;
 
 
 import javafx.scene.control.ListView;
+import javafx.scene.paint.Paint;
+import javafx.scene.shape.Circle;
 import persistence.PlayerList;
 
-public class Player implements PlayerInterface{
+public class Player {
 
+    private Player player;
     private String name;
-    private ColorCircle colorCircle;
+    private Circle colorCircle;
 
-
-    public Player(String name) {
-        this.name = name;
-
-
+    public Player() {
     }
 
-    public Player(String name, ColorCircle colorCircle){
-        this.name= name;
-        this.colorCircle= colorCircle;
+    public Player(String name, Circle colorCircle) {
+        this.name = name;
+        this.colorCircle = colorCircle;
     }
 
     @Override
@@ -26,32 +25,29 @@ public class Player implements PlayerInterface{
         return this.name;
     }
 
+    private void setName(String name) {
+        this.name = name;
+    }
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    private void setCircle(Circle circle) {
+        this.colorCircle = circle;
+    }
+    public Circle getCircle() {
+        return this.colorCircle;
     }
 
-    @Override
-    public int amoutnPlayer() {
-        return 0;
-    }
-
-    @Override
-    public void updatePlayer() {
-
-    }
-    public void addPlayertoList(Player player){
+    public void addPlayertoList(Player player) {
         PlayerList.getInstance().addPlayerToList(player);
     }
 
-    @Override
-    public ListView<Player> displayPlayer() {
-        PlayerList.getInstance().showList();
-
-        return PlayerList.getInstance().showList();
+    public Player getPlayer(int x) {
+        this.player = PlayerList.getInstance().showList(x);
+        setName(player.name);
+        setCircle(player.colorCircle);
+        return PlayerList.getInstance().showList(x);
     }
 
 

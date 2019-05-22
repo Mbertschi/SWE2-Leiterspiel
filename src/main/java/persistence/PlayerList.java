@@ -19,11 +19,17 @@ public class PlayerList implements MokInterfaceDataPlayer {
     public static PlayerList getInstance() {
         return setInstance;
     }
-    private ObservableList<Player> playerListOb = FXCollections.observableArrayList();
-    private ListView<Player>playerListView= new ListView<>();
-    List<Player> playerList = new LinkedList<>();
+
+    private List<Player> playerList = new LinkedList<>();
+    private void setPlayerList(Player player) {
+        playerList.add(player);
+    }
+    public List<Player> getPlayerList() {
+        return this.playerList;
+    }
+
     @Override
-        public void getDataPlayer() {
+    public void getDataPlayer() {
 
     }
 
@@ -45,18 +51,22 @@ public class PlayerList implements MokInterfaceDataPlayer {
 
     @Override
     public void addPlayerToList(Player player) {
-        playerListOb.add(player);
-        playerList.add(player);
-
-
+        setPlayerList(player);
     }
 
-
-
-
-    public ListView<Player>  showList(){
-        System.out.println(playerList);
-        playerListView.setItems(playerListOb);
-        return playerListView;
+    public  Integer sizeOfList(){
+        int x = getPlayerList().size();
+        return x;
     }
+
+    public Player showList(int i){
+        player = getPlayerList().get(i);
+        return player;
+    }
+
+//    public ListView<Player>  showList(){
+//        System.out.println(playerList);
+//        playerListView.setItems(playerListOb);
+//        return playerListView;
+//    }
 }
