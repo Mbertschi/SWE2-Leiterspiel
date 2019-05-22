@@ -1,8 +1,14 @@
 package business;
 
+import javafx.geometry.HPos;
+import javafx.geometry.Pos;
+import javafx.scene.Group;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
+
+import java.awt.*;
 
 
 public class Playfield {
@@ -20,15 +26,46 @@ public class Playfield {
 
         Integer rowNum = 6;
         Integer colNum = 10;
+        Integer cellNumber = 60;
+        Integer backWardCell = 9;
+
 
         for (int row = 0; row < rowNum; row++) {
+
             for (int col = 0; col < colNum; col++) {
-                Rectangle rt = playfieldCell.CreateCell();
-                gridPane.setRowIndex(rt, row);
-                gridPane.setColumnIndex(rt, col);
-                this.gridPane.getChildren().addAll(rt);
+
+                Group fieldCell = playfieldCell.CreateCell(cellNumber, Color.WHITE);
+
+                switch(cellNumber) {
+                    case 1: fieldCell = playfieldCell.CreateCell(cellNumber, Color.LIGHTGREEN);
+                        break;
+                    case 4: fieldCell = playfieldCell.CreateCell(cellNumber, Color.GREEN);
+                            break;
+                    case 10: fieldCell = playfieldCell.CreateCell(cellNumber, Color.YELLOW);
+                        break;
+                    case 20: fieldCell = playfieldCell.CreateCell(cellNumber, Color.PINK);
+                        break;
+                    case 60: fieldCell = playfieldCell.CreateCell(cellNumber, Color.LIGHTGREEN);
+                        break;
+                    default: break;
+                }
+
+                if(row == 1 || row == 3 || row == 5) {
+                    this.gridPane.setConstraints(fieldCell, backWardCell, row);
+                    this.gridPane.getChildren().addAll(fieldCell);
+                    backWardCell = backWardCell - 1;
+                }
+                else {
+                    backWardCell = 9;
+                    this.gridPane.setConstraints(fieldCell, col, row);
+                    this.gridPane.getChildren().addAll(fieldCell);
+                }
+                cellNumber = cellNumber - 1;
             }
         }
+
+        Text text = new Text("BLABLABLA");
+        this.gridPane.getChildren().addAll(text);
         return this.gridPane;
     }
 
