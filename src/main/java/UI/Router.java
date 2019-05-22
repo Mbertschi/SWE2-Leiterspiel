@@ -1,5 +1,6 @@
 package UI;
 
+import business.ColorCircle;
 import business.Dice;
 import business.Player;
 import business.Playfield;
@@ -58,17 +59,6 @@ public class Router {
         pane.getChildren().add(scene);
 
         for (int x = 0; x < amountPlayers; x++) {
-            // add circles
-            Circle circle = new Circle();
-            circle.setRadius(10);
-            Random rand = new Random();
-            Double r = rand.nextDouble();
-            Double g = rand.nextDouble();
-            Double b = rand.nextDouble();
-            Color randomColor = new Color(r,g,b,1.0);
-            circle.setFill(randomColor);
-            circle.setStroke(Color.BLACK);
-
             // add textfields
             Double xValue = 100.0;
             Double yValue = 180 + x * 40.0;
@@ -76,7 +66,8 @@ public class Router {
             TextField textfield = new TextField("Spieler"+ playerNumber);
             textfield.setLayoutX(xValue);
             textfield.setLayoutY(yValue);
-
+            // add Circles
+            Circle circle = new ColorCircle().createCircle();
             Double circleXValue = xValue - 30;
             Double circleYValue = yValue + 13.5;
             circle.setLayoutX(circleXValue);
@@ -85,6 +76,7 @@ public class Router {
             pane.getChildren().add(textfield);
             pane.getChildren().add(circle);
             this.setPane(pane);
+            // add in setCircles
         }
 
         Scene windowScene = new Scene(pane);
@@ -104,22 +96,23 @@ public class Router {
         dice.setTranslateX(500);
         dice.setTranslateY(500);
         pane.getChildren().add(dice);
+        Player player = new Player("");
         PlayerList.getInstance().showList().setTranslateX(700);
         PlayerList.getInstance().showList().setTranslateY(100);
-        pane.getChildren().add(PlayerList.getInstance().showList());
+        pane.getChildren().add(player.displayPlayer());
 
         // add playField to Scene
         Playfield playfield = new Playfield();
         GridPane gp = playfield.CreateLevelOne();
         pane.getChildren().add(gp);
 
-        // PlayerList.getInstance().showList();
+
         Scene windowScene = new Scene(pane);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         window.setScene(windowScene);
         window.show();
 
-        //List<Cell> cells = new ArrayList<>();
+
 
     }
 

@@ -1,21 +1,24 @@
 package business;
 
 
-import javafx.scene.control.TextField;
+import javafx.scene.control.ListView;
 import persistence.PlayerList;
-
-
-import java.util.Scanner;
 
 public class Player implements PlayerInterface{
 
     private String name;
-    private int amountPlayerValue;
+    private ColorCircle colorCircle;
 
 
     public Player(String name) {
         this.name = name;
 
+
+    }
+
+    public Player(String name, ColorCircle colorCircle){
+        this.name= name;
+        this.colorCircle= colorCircle;
     }
 
     @Override
@@ -40,24 +43,18 @@ public class Player implements PlayerInterface{
     public void updatePlayer() {
 
     }
-
-
-    @Override
-    public void displayPlayer() {
-        PlayerList.getInstance().showList();
+    public void addPlayertoList(Player player){
+        PlayerList.getInstance().addPlayerToList(player);
     }
 
-//    public Player createPlayer(String nubmerOfPlayer){
-//        Player player = new Player("");
-//        int playerNumbers = Integer.parseInt(nubmerOfPlayer);
-//
-//        for(int i = 0; i <= playerNumbers; i++){
-//
-//            new Player("");
-//
-//        }
-//        return player;
-//    }
+    @Override
+    public ListView<Player> displayPlayer() {
+        PlayerList.getInstance().showList();
+
+        return PlayerList.getInstance().showList();
+    }
+
+
 
 
 

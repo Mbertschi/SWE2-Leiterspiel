@@ -26,7 +26,8 @@ public class FXMLControllerScenePlayerListAndStartGame {
             if (child instanceof TextField) {
                 String playerName = ((TextField) child).getText();
                 Player player = new Player(playerName);
-                PlayerList.getInstance().addPlayerToList(player);
+                player.addPlayertoList(player);
+
             }
 
         }

@@ -11,4 +11,8 @@ public class MainController {
                 this.amountPlayer = amountPlayer;
         }
 
+        public void addPlayerToList(Player player){
+                 new Player("").addPlayertoList(player);
+        }
+
 }
