@@ -47,6 +47,14 @@ public class Router {
         return this.playerCircles;
     }
 
+    private GridPane playField;
+    private void setPlayField(GridPane playField) {
+        this.playField = playField;
+    }
+    public GridPane getPlayField() {
+        return this.playField;
+    }
+
     public void toNextScene(ActionEvent event, String fxmlScene)throws IOException {
 
         Parent scene = FXMLLoader.load(getClass().getResource(fxmlScene+".fxml"));
@@ -104,62 +112,57 @@ public class Router {
         pane.getChildren().add(scene);
 
         // add Dice to Scene
-        dice.setTranslateX(500);
-        dice.setTranslateY(500);
+        dice.setTranslateX(810);
+        dice.setTranslateY(480);
         pane.getChildren().add(dice);
 
         GridPane playerPane = new GridPane();
-        playerPane.setPrefHeight(350);
-        playerPane.setPrefWidth(200);
-        playerPane.setLayoutX(850);
-        playerPane.setLayoutY(150);
+        playerPane.setPrefHeight(250);
+        playerPane.setPrefWidth(130);
+        playerPane.setLayoutX(810);
+        playerPane.setLayoutY(140);
 
         ColumnConstraints col1 = new ColumnConstraints();
-        col1.setMinWidth(25);
+        col1.setMinWidth(30);
         ColumnConstraints col2 = new ColumnConstraints();
-        col2.setMinWidth(175);
-
-        RowConstraints row1 = new RowConstraints();
-        row1.setMinHeight(50);
-        RowConstraints row2 = new RowConstraints();
-        row2.setMinHeight(50);
-
+        col2.setMinWidth(100);
         playerPane.getColumnConstraints().addAll(col1,col2);
-        playerPane.getRowConstraints().addAll(row1,row2);
 
         Player player = new Player();
 
+        // add playField to Scene
+        Playfield playfield = new Playfield();
+        GridPane gp = playfield.CreateLevelOne();
+
         for(int i = 0; i < PlayerList.getInstance().sizeOfList(); i++){
+
+            RowConstraints row1 = new RowConstraints();
+            row1.setMinHeight(40);
+            playerPane.getRowConstraints().addAll(row1);
 
             player = player.getPlayer(i);
 
-            Circle circle = player.getCircle();
-            playerPane.setConstraints(circle, 0, i);
-            playerPane.getChildren().addAll(circle);
+            Circle playerCircle = player.getCircle();
+            playerPane.setConstraints(playerCircle, 0, i);
+            playerPane.getChildren().addAll(playerCircle);
 
             Label label = new Label();
             label.setText(player.getName());
             playerPane.setConstraints(label, 1, i);
             playerPane.getChildren().addAll(label);
 
-
+            //gp.getChildren().add(1, playerCircle);
         }
 
         pane.getChildren().add(playerPane);
 
-        // add playField to Scene
-        Playfield playfield = new Playfield();
-        GridPane gp = playfield.CreateLevelOne();
         pane.getChildren().add(gp);
-
+        this.setPlayField(gp);
 
         Scene windowScene = new Scene(pane);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         window.setScene(windowScene);
         window.show();
-
-
-
     }
 
 

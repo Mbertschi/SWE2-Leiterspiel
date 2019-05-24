@@ -12,19 +12,19 @@ public class PlayfieldCell {
         String cellValue = cellId.toString();
 
         Text text = new Text(cellValue);
-        text.setLayoutX(15);
+        text.setLayoutX(5);
         text.setLayoutY(15);
 
         Group fieldCell = new Group();
-        fieldCell.maxWidth(50);
-        fieldCell.maxHeight(50);
+        fieldCell.maxWidth(70);
+        fieldCell.maxHeight(70);
 
         Rectangle rt = new Rectangle();
         rt.setId(cellValue);
         rt.setFill(color);
         rt.setStroke(Color.BLACK);
-        rt.setWidth(50);
-        rt.setHeight(50);
+        rt.setWidth(60);
+        rt.setHeight(60);
 
         fieldCell.getChildren().add(rt);
         fieldCell.getChildren().add(text);

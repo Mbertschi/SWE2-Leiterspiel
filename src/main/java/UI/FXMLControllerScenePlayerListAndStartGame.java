@@ -12,16 +12,15 @@ import java.io.IOException;
 
 public class FXMLControllerScenePlayerListAndStartGame {
 
-
     // Back to SceneTwo
     public void backToSceneTwo(ActionEvent event) throws IOException {
         Router router = new Router();
         router.toNextScene(event,"SceneInitializePlayers");
 
     }
+
     //Go to SceneFive
     public void goToSceneFive(ActionEvent event) throws IOException {
-
         Integer nameCounter = 0;
         Pane pane = Router.getInstance().getPane();
         for (Node child : pane.getChildren()) {

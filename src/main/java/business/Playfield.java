@@ -39,12 +39,14 @@ public class Playfield {
                 switch(cellNumber) {
                     case 1: fieldCell = playfieldCell.CreateCell(cellNumber, Color.LIGHTGREEN);
                         break;
+                    /*
                     case 4: fieldCell = playfieldCell.CreateCell(cellNumber, Color.GREEN);
                             break;
                     case 10: fieldCell = playfieldCell.CreateCell(cellNumber, Color.YELLOW);
                         break;
                     case 20: fieldCell = playfieldCell.CreateCell(cellNumber, Color.PINK);
                         break;
+                    */
                     case 60: fieldCell = playfieldCell.CreateCell(cellNumber, Color.LIGHTGREEN);
                         break;
                     default: break;
@@ -64,8 +66,6 @@ public class Playfield {
             }
         }
 
-        Text text = new Text("BLABLABLA");
-        this.gridPane.getChildren().addAll(text);
         return this.gridPane;
     }
 
