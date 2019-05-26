@@ -1,7 +1,11 @@
 package business;
 
+import UI.FXMLControllerScenePlayfield;
+import com.sun.tools.javac.Main;
 import javafx.animation.RotateTransition;
 import javafx.beans.property.SimpleIntegerProperty;
+import javafx.scene.Node;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
@@ -9,34 +13,44 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 
-
 public class Dice extends Pane {
 
- public static final int MAX_Value = 6;
- public static final int MIN_Value = 1;
- public  final SimpleIntegerProperty  valueProperty = new SimpleIntegerProperty();
+    private static final int MAX_Value = 6;
+    private static final int MIN_Value = 1;
+    private final SimpleIntegerProperty valueProperty = new SimpleIntegerProperty();
+    private Text text;
+    private Rectangle rect;
 
-    public  Dice() {
-        Rectangle rect = new Rectangle(65,65);
+    public Dice() {
+        rect = new Rectangle(65,65);
         rect.setFill(Color.BLACK);
-        Text text = new Text();
+        text = new Text();
         text.setFill(Color.WHITE);
         text.setLayoutY(42);
         text.setLayoutX(25);
         text.setFont(Font.font("Verdana", 25));
         this.setTranslateY(50);
         this.setTranslateX(50);
-        text.textProperty().bind(valueProperty.asString());
+
+        text.textProperty().bind(this.valueProperty.asString());
         getChildren().addAll(rect,text);
         this.setOnMouseClicked(event -> roll());
     }
 
     public void roll() {
-        RotateTransition rt = new RotateTransition(Duration.seconds(1),this);
+
+        RotateTransition rt = new RotateTransition(Duration.seconds(0.2),this);
         rt.setFromAngle(30);
         rt.setToAngle(360);
+        int randomNumber = (int)(Math.random()*(MAX_Value-MIN_Value+1))+MIN_Value;
+
         rt.setOnFinished(event -> {
-            valueProperty.set((int)(Math.random()*(MAX_Value-MIN_Value+1))+MIN_Value);});
+            this.valueProperty.set(randomNumber);
+        });
+
         rt.play();
+
+        MainController mainController = new MainController();
+        mainController.getValueOfRollDiceAndAddToPlayer(randomNumber);
     }
 }

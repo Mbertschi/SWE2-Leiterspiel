@@ -17,7 +17,6 @@ import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import persistence.PlayerList;
 
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -53,6 +52,14 @@ public class Router {
     }
     public GridPane getPlayField() {
         return this.playField;
+    }
+
+    private Dice dice;
+    private void setDice(Dice dice) {
+        this.dice = dice;
+    }
+    public Dice getDice() {
+        return this.dice;
     }
 
     public void toNextScene(ActionEvent event, String fxmlScene)throws IOException {
@@ -115,6 +122,7 @@ public class Router {
         dice.setTranslateX(810);
         dice.setTranslateY(480);
         pane.getChildren().add(dice);
+        this.setDice(dice);
 
         GridPane playerPane = new GridPane();
         playerPane.setPrefHeight(250);
@@ -163,10 +171,7 @@ public class Router {
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         window.setScene(windowScene);
         window.show();
+
     }
-
-
-
-
 
 }

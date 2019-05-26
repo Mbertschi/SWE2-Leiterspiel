@@ -41,7 +41,7 @@ public class FXMLControllerSceneInitializePlayers {
 
 
     // Go to SceneTwo
-    public  void addAmountButton(ActionEvent event) throws IOException {
+    public void addAmountButton(ActionEvent event) throws IOException {
 
          String amountPlayerValue = amountPlayerTextfield.getText();
 

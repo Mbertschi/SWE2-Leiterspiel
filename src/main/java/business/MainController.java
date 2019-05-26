@@ -1,18 +1,23 @@
 package business;
 
 
+import UI.Router;
+import javafx.fxml.FXML;
+import javafx.scene.layout.GridPane;
+
 public class MainController {
 
-        public MainController(){}
+        @FXML
+        GridPane playfield;
+        Dice dice;
 
-        private int amountPlayer;
-
-        public void SetAmountPlayer(int amountPlayer) {
-                this.amountPlayer = amountPlayer;
+        public MainController(){
         }
 
-        public void addPlayerToList(Player player){
-                 new Player().addPlayertoList(player);
+        public void getValueOfRollDiceAndAddToPlayer(int diceNumber) {
+                Router router = Router.getInstance();
+                this.dice = router.getDice();
+                this.playfield = router.getPlayField();
+                System.out.println("Der Wert des gewürfelten Werts beträgt: " + diceNumber);
         }
-
 }
