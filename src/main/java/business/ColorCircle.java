@@ -7,12 +7,8 @@ import java.util.Random;
 
 public class ColorCircle {
 
-    public ColorCircle(){
-
+    public ColorCircle() {
     }
-
-
-
 
     public Circle createCircle(){
         Circle circle = new Circle();
@@ -24,7 +20,6 @@ public class ColorCircle {
         Color randomColor = new Color(r,g,b,1.0);
         circle.setFill(randomColor);
         circle.setStroke(Color.BLACK);
-// set property color
         return circle;
     }
 

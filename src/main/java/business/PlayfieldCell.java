@@ -28,6 +28,7 @@ public class PlayfieldCell {
 
         fieldCell.getChildren().add(rt);
         fieldCell.getChildren().add(text);
+        fieldCell.setUserData(cellId);
         return fieldCell;
     }
 

@@ -9,6 +9,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.shape.Circle;
 import persistence.PlayerList;
 import java.io.IOException;
+import java.util.List;
 
 public class FXMLControllerScenePlayerListAndStartGame {
 
@@ -16,31 +17,26 @@ public class FXMLControllerScenePlayerListAndStartGame {
     public void backToSceneTwo(ActionEvent event) throws IOException {
         Router router = new Router();
         router.toNextScene(event,"SceneInitializePlayers");
-
     }
 
     //Go to SceneFive
     public void goToSceneFive(ActionEvent event) throws IOException {
-        Integer nameCounter = 0;
+        Integer counter = 0;
+        Integer playerNumber;
+        Integer playerPlayFieldCellNumber = 1;
         Pane pane = Router.getInstance().getPane();
         for (Node child : pane.getChildren()) {
             if (child instanceof TextField) {
+                playerNumber = counter + 1;
                 String playerName = ((TextField) child).getText();
-                Circle circle = Router.getInstance().getPlayerCircles().get(nameCounter);
-                Player player = new Player(playerName, circle);
+                Circle circle = Router.getInstance().getPlayerCircles().get(counter);
+                Player player = new Player(playerNumber, playerName, circle, playerPlayFieldCellNumber);
                 player.addPlayertoList(player);
-                nameCounter++;
+                counter++;
             }
 
         }
-       // PlayerList.getInstance().showList();
         Router.getInstance().toPlayfieldScene(event,"ScenePlayfield");
-
     }
-
-
-
-
     // ToDo : delete unused import classes
-
 }

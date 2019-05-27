@@ -22,7 +22,7 @@ public class PlayerList implements MokInterfaceDataPlayer {
 
     private List<Player> playerList = new LinkedList<>();
     private void setPlayerList(Player player) {
-        playerList.add(player);
+        this.playerList.add(player);
     }
     public List<Player> getPlayerList() {
         return this.playerList;
@@ -47,7 +47,6 @@ public class PlayerList implements MokInterfaceDataPlayer {
     public void SaveDataPlayer() {
 
     }
-
 
     @Override
     public void addPlayerToList(Player player) {

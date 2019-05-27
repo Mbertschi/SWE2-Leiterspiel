@@ -99,10 +99,8 @@ public class Router {
             circle.setLayoutX(circleXValue);
             circle.setLayoutY(circleYValue);
 
-            pane.getChildren().add(textfield);
-            pane.getChildren().add(circle);
+            pane.getChildren().addAll(textfield, circle);
             this.setPane(pane);
-            // add in setCircles
         }
 
         Scene windowScene = new Scene(pane);
