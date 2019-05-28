@@ -34,7 +34,6 @@ public class FXMLControllerScenePlayerListAndStartGame {
                 player.addPlayertoList(player);
                 counter++;
             }
-
         }
         Router.getInstance().toPlayfieldScene(event,"ScenePlayfield");
     }

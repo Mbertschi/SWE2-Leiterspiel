@@ -20,6 +20,7 @@ public class Dice extends Pane {
     private final SimpleIntegerProperty valueProperty = new SimpleIntegerProperty();
     private Text text;
     private Rectangle rect;
+    MainController mainController = new MainController();
 
     public Dice() {
         rect = new Rectangle(65,65);
@@ -38,7 +39,6 @@ public class Dice extends Pane {
     }
 
     public void roll() {
-
         RotateTransition rt = new RotateTransition(Duration.seconds(0.2),this);
         rt.setFromAngle(30);
         rt.setToAngle(360);
@@ -50,7 +50,6 @@ public class Dice extends Pane {
 
         rt.play();
 
-        MainController mainController = new MainController();
-        mainController.getValueOfRollDiceAndAddToPlayer(randomNumber);
+        this.mainController.addValueOfRollDiceAndAddToPlayer(randomNumber);
     }
 }

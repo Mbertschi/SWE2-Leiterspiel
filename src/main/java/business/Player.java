@@ -12,6 +12,7 @@ public class Player {
     private Circle colorCircle;
     private Integer playerPlayFieldCellNumber;
     private Integer playerNumber;
+    private boolean playerTurn;
 
     public Player() {
     }
@@ -21,10 +22,12 @@ public class Player {
         this.name = name;
         this.colorCircle = colorCircle;
         this.playerPlayFieldCellNumber = playerPlayFieldCellNumber;
+        this.playerTurn = false; // ToDo : put this dynamic
         setPlayerNumber(this.playerNumber);
         setName(this.name);
         setCircle(this.colorCircle);
         setPlayerPlayFieldCellNumber(this.playerPlayFieldCellNumber);
+        setPlayerTurn(this.playerTurn);
     }
 
     @Override
@@ -53,11 +56,19 @@ public class Player {
         return this.colorCircle;
     }
 
-    private void setPlayerPlayFieldCellNumber(Integer playerPlayFieldCellNumber) {
+    public void setPlayerPlayFieldCellNumber(Integer playerPlayFieldCellNumber) {
         this.playerPlayFieldCellNumber = playerPlayFieldCellNumber;
     }
     public Integer getPlayerPlayFieldCellNumber() {
         return this.playerPlayFieldCellNumber;
+    }
+
+    private void setPlayerTurn(boolean playerTurn) {
+        this.playerTurn = playerTurn;
+    }
+
+    public boolean getPlayerTurn() {
+        return this.playerTurn;
     }
 
     public void addPlayertoList(Player player) {

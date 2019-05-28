@@ -38,6 +38,7 @@ public class Router {
         return this.dynamicPane;
     }
 
+    @FXML
     private List<Circle> playerCircles;
     private void setPlayerCircles(Circle colorCircle) {
         this.playerCircles.add(colorCircle);
@@ -46,9 +47,10 @@ public class Router {
         return this.playerCircles;
     }
 
+    @FXML
     private GridPane playField;
-    private void setPlayField(GridPane playField) {
-        this.playField = playField;
+    private void setPlayField(GridPane playfield) {
+        this.playField = playfield;
     }
     public GridPane getPlayField() {
         return this.playField;
@@ -138,7 +140,7 @@ public class Router {
 
         // add playField to Scene
         Playfield playfield = new Playfield();
-        GridPane gp = playfield.CreateLevelOne();
+        GridPane playfieldGridPane = playfield.CreateLevelOne();
 
         for(int i = 0; i < PlayerList.getInstance().sizeOfList(); i++){
 
@@ -156,19 +158,19 @@ public class Router {
             label.setText(player.getName());
             playerPane.setConstraints(label, 1, i);
             playerPane.getChildren().addAll(label);
-
-            //gp.getChildren().add(1, playerCircle);
         }
 
         pane.getChildren().add(playerPane);
-
-        pane.getChildren().add(gp);
-        this.setPlayField(gp);
+        pane.getChildren().add(playfieldGridPane);
+        this.setPlayField(playfieldGridPane);
 
         Scene windowScene = new Scene(pane);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         window.setScene(windowScene);
         window.show();
+
+        MainController mainController = new MainController();
+        mainController.initializePlayersOnFirstField();
 
     }
 

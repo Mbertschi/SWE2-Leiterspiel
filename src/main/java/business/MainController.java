@@ -2,19 +2,28 @@ package business;
 
 
 import UI.FXMLControllerScenePlayfield;
+import UI.Router;
+import com.sun.tools.javac.Main;
 import persistence.PlayerList;
-
 import java.util.List;
 
 public class MainController {
 
-        public MainController(){
+        private FXMLControllerScenePlayfield fxmlControllerScenePlayfield;
+        private int diceNumber;
+
+        public MainController() {
         }
 
-        public void getValueOfRollDiceAndAddToPlayer(int diceNumber) {
-                FXMLControllerScenePlayfield fxmlControllerScenePlayfield = new FXMLControllerScenePlayfield();
-                fxmlControllerScenePlayfield.setPlayersOnFirstCell();
-                System.out.println("Der Wert des gewürfelten Werts beträgt: " + diceNumber);
+        public void initializePlayersOnFirstField() {
+                this.fxmlControllerScenePlayfield = new FXMLControllerScenePlayfield();
+                this.fxmlControllerScenePlayfield.initializeFirstPlayfieldCell(getPlayerList());
+        }
+
+        public void addValueOfRollDiceAndAddToPlayer(int diceNumber) {
+                this.diceNumber = diceNumber;
+                System.out.println("Der Wert des gewürfelten Werts beträgt: " + this.diceNumber);
+                this.fxmlControllerScenePlayfield.addValueOfDiceToPlayer(this.diceNumber);
         }
 
         public List<Player> getPlayerList() {

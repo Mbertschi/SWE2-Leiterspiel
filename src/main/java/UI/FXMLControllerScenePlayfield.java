@@ -30,27 +30,67 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+class CircleCopy {
+    private Circle circle;
+
+    public CircleCopy(Circle playerCircle) {
+        this.circle = playerCircle; // you can access
+    }
+
+    public Circle getCircleCopy() {
+        return this.circle;
+    }
+}
+
 public class FXMLControllerScenePlayfield {
 
     @FXML
-    GridPane playfield;
+    private GridPane playfield;
 
-    public void setPlayersOnFirstCell() {
-        Router router = Router.getInstance();
-        this.playfield = router.getPlayField();
-        Group fieldGroup = getFirstField(this.playfield, 1);
-        MainController mainController = new MainController();
-        List<Player> fieldPlayers = new LinkedList<>();
-        fieldPlayers = mainController.getPlayerList();
-
-        //for(Player player : fieldPlayers){
-        for(var i = 0; i < fieldPlayers.size(); i++) {
-            Circle playerCircle = fieldPlayers.get(i).getCircle();
-            fieldGroup.getChildren().addAll(playerCircle);
-        }
+    public FXMLControllerScenePlayfield() {
     }
 
-    private Group getFirstField(GridPane gridPane, Integer data) {
+    public void initializeFirstPlayfieldCell(List<Player> fieldPlayers) {
+
+        this.playfield = Router.getInstance().getPlayField();
+        Group fieldGroup = getFieldNumberFromPlayfield(playfield, 1);
+
+        //CircleCopy circleCopy = new CircleCopy(fieldPlayers.get(1).getCircle());
+        //fieldGroup.getChildren().add(circleCopy.getCircleCopy());
+
+        int i = 1;
+        for(Player player : fieldPlayers){
+            Circle playerCircle = player.getCircle();
+            playerCircle.setRadius(6);
+            playerCircle.setLayoutY(30);
+            playerCircle.setLayoutX(i * 6);
+            CircleCopy circleCopy = new CircleCopy(playerCircle);
+            fieldGroup.getChildren().addAll(circleCopy.getCircleCopy());
+            i++;
+        }
+
+    }
+
+    public void addValueOfDiceToPlayer(int diceNumber) {
+        Player player = this.getPlayerWhoIsInTurn();
+        Integer newPlayerFieldNumber = player.getPlayerPlayFieldCellNumber() + diceNumber;
+        Group fieldGroup = getFieldNumberFromPlayfield(this.playfield, newPlayerFieldNumber);
+        fieldGroup.getChildren().addAll(player.getCircle());
+        // ToDo : handle with specialfield
+        player.setPlayerPlayFieldCellNumber(newPlayerFieldNumber);
+    }
+
+    private Player getPlayerWhoIsInTurn() {
+        List<Player> playerList = PlayerList.getInstance().getPlayerList();
+        for(Player player : playerList) {
+            if(player.getPlayerTurn()) {
+                return player;
+            }
+        }
+        return null;
+    }
+
+    private Group getFieldNumberFromPlayfield(GridPane gridPane, Integer data) {
         for (Node node : gridPane.getChildren()) {
             if (node instanceof Group) {
                 for(Node group : ((Group)node).getChildren()) {
