@@ -90,12 +90,10 @@ public class FXMLControllerScenePlayfield {
         return null;
     }
 
-    public void toSceneSix(ActionEvent event) throws IOException {
+    public void toNextScene(ActionEvent event) throws IOException {
         Router.getInstance().toNextScene(event,"SceneRankingAndRestart");
     }
 
-    public void closeApplication(){
-        System.exit(0);
-    }
+
 
 }

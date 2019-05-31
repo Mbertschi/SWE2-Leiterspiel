@@ -7,8 +7,7 @@
 <Pane maxHeight="600" maxWidth="1000" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.FXMLControllerScenePlayfield">
    <children>
       <fx:include source="header.fxml" />
-      <Button fx:id="restartGame" layoutX="745.0" layoutY="20.0" mnemonicParsing="false" onAction="#toSceneSix" text="Spiel neustarten" />
-      <Button fx:id="gameclose" layoutX="881.0" layoutY="20.0" mnemonicParsing="false" onAction="#closeApplication" prefHeight="25.0" prefWidth="101.0" text="Spiel beenden" />
+      <Button fx:id="gameclose" layoutX="881.0" layoutY="20.0" mnemonicParsing="false" onAction="#toNextScene" prefHeight="25.0" prefWidth="101.0" text="Spiel beenden" />
    </children>
    <effect>
       <Blend />

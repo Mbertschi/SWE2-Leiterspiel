@@ -1,8 +1,11 @@
 package UI;
 
+import business.Player;
 import javafx.event.ActionEvent;
+import persistence.PlayerList;
 
 import java.io.IOException;
+
 
 public class FXMLControllerSceneRankingAndRestart {
     Router router = new Router();
@@ -12,11 +15,16 @@ public class FXMLControllerSceneRankingAndRestart {
     }
     //Go to SceneFive
     public void goToSceneFive(ActionEvent event) throws IOException {
+
      Router.getInstance().toNextScene(event,"ScenePlayfield");
 
+
+    }
+    public void closeApplication(){
+        System.exit(0);
     }
 
-    //Applikation beenden
+
 
 
 }
