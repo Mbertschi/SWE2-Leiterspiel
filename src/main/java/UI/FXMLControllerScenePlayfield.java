@@ -1,9 +1,6 @@
 package UI;
 
-import business.Converter;
-import business.Dice;
-import business.MainController;
-import business.Player;
+import business.*;
 import javafx.animation.RotateTransition;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.event.ActionEvent;
@@ -30,18 +27,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-class CircleCopy {
-    private Circle circle;
-
-    public CircleCopy(Circle playerCircle) {
-        this.circle = playerCircle; // you can access
-    }
-
-    public Circle getCircleCopy() {
-        return this.circle;
-    }
-}
-
 public class FXMLControllerScenePlayfield {
 
     @FXML
@@ -55,17 +40,15 @@ public class FXMLControllerScenePlayfield {
         this.playfield = Router.getInstance().getPlayField();
         Group fieldGroup = getFieldNumberFromPlayfield(playfield, 1);
 
-        //CircleCopy circleCopy = new CircleCopy(fieldPlayers.get(1).getCircle());
-        //fieldGroup.getChildren().add(circleCopy.getCircleCopy());
-
         int i = 1;
         for(Player player : fieldPlayers){
-            Circle playerCircle = player.getCircle();
+
+            Circle playerCircle = new ColorCircle().createCircle(player.getPlayerColor());
             playerCircle.setRadius(6);
             playerCircle.setLayoutY(30);
             playerCircle.setLayoutX(i * 6);
-            CircleCopy circleCopy = new CircleCopy(playerCircle);
-            fieldGroup.getChildren().addAll(circleCopy.getCircleCopy());
+
+            fieldGroup.getChildren().addAll(playerCircle);
             i++;
         }
 
@@ -75,7 +58,8 @@ public class FXMLControllerScenePlayfield {
         Player player = this.getPlayerWhoIsInTurn();
         Integer newPlayerFieldNumber = player.getPlayerPlayFieldCellNumber() + diceNumber;
         Group fieldGroup = getFieldNumberFromPlayfield(this.playfield, newPlayerFieldNumber);
-        fieldGroup.getChildren().addAll(player.getCircle());
+        Circle playerCircle = new ColorCircle().createCircle(player.getPlayerColor());
+        fieldGroup.getChildren().addAll(playerCircle);
         // ToDo : handle with specialfield
         player.setPlayerPlayFieldCellNumber(newPlayerFieldNumber);
     }
