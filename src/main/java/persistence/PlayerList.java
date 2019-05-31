@@ -1,11 +1,6 @@
 package persistence;
 
 import business.Player;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.scene.control.ListView;
-import javafx.scene.paint.Color;
-
 import java.util.LinkedList;
 import java.util.List;
 

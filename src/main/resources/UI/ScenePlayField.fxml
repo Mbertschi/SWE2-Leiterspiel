@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Blend?>
-<?import javafx.scene.effect.Lighting?>
-<?import javafx.scene.effect.Shadow?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.shape.Circle?>
-<?import javafx.scene.text.Font?>
 
-<Pane prefHeight="600.0" maxHeight="600" prefWidth="1000.0" maxWidth="1000" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.FXMLControllerScenePlayfield">
+<Pane maxHeight="600" maxWidth="1000" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.FXMLControllerScenePlayfield">
    <children>
-      <fx:include source="header.fxml"/>
-      <Button fx:id="endGame" layoutX="875.0" layoutY="20.0" mnemonicParsing="false" onAction="#toSceneSix" text="Spiel beenden" />
+      <fx:include source="header.fxml" />
       <Button fx:id="restartGame" layoutX="745.0" layoutY="20.0" mnemonicParsing="false" onAction="#toSceneSix" text="Spiel neustarten" />
+      <Button fx:id="gameclose" layoutX="881.0" layoutY="20.0" mnemonicParsing="false" onAction="#closeApplication" prefHeight="25.0" prefWidth="101.0" text="Spiel beenden" />
    </children>
    <effect>
       <Blend />

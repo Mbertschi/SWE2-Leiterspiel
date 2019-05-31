@@ -1,8 +1,5 @@
 package business;
 
-
-import javafx.scene.control.ListView;
-import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 import persistence.PlayerList;
 

@@ -2,7 +2,7 @@ package persistence;
 
 import business.Player;
 
-import java.util.List;
+
 
 public interface MokInterfaceDataPlayer {
 

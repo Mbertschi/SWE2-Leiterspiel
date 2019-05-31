@@ -1,14 +1,10 @@
 package business;
 
-import javafx.geometry.HPos;
-import javafx.geometry.Pos;
+
 import javafx.scene.Group;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
-import javafx.scene.text.Text;
 
-import java.awt.*;
 
 
 public class Playfield {

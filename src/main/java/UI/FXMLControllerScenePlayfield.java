@@ -1,34 +1,17 @@
 package UI;
 
 import business.Converter;
-import business.Dice;
-import business.MainController;
 import business.Player;
-import javafx.animation.RotateTransition;
-import javafx.beans.property.SimpleIntegerProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
-import javafx.util.Duration;
-import org.w3c.dom.UserDataHandler;
 import persistence.PlayerList;
-
-import javax.print.DocFlavor;
 import java.io.IOException;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.ResourceBundle;
 
 class CircleCopy {
     private Circle circle;
@@ -109,6 +92,10 @@ public class FXMLControllerScenePlayfield {
 
     public void toSceneSix(ActionEvent event) throws IOException {
         Router.getInstance().toNextScene(event,"SceneRankingAndRestart");
+    }
+
+    public void closeApplication(){
+        System.exit(0);
     }
 
 }

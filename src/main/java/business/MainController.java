@@ -2,8 +2,6 @@ package business;
 
 
 import UI.FXMLControllerScenePlayfield;
-import UI.Router;
-import com.sun.tools.javac.Main;
 import persistence.PlayerList;
 import java.util.List;
 

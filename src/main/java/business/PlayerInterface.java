@@ -1,6 +1,6 @@
 package business;
 
-import javafx.scene.control.ListView;
+
 
 public interface PlayerInterface {
 

@@ -7,9 +7,7 @@ import javafx.scene.Node;
 import javafx.scene.layout.Pane;
 import javafx.scene.control.TextField;
 import javafx.scene.shape.Circle;
-import persistence.PlayerList;
 import java.io.IOException;
-import java.util.List;
 
 public class FXMLControllerScenePlayerListAndStartGame {
 

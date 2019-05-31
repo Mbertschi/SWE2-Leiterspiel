@@ -8,19 +8,15 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import persistence.PlayerList;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
+
 
 public class Router {
 
