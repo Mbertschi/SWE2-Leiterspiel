@@ -10,15 +10,10 @@ public class ColorCircle {
     public ColorCircle() {
     }
 
-    public Circle createCircle(){
+    public Circle createCircle(Color playerColor){
         Circle circle = new Circle();
         circle.setRadius(10);
-        Random rand = new Random();
-        Double r = rand.nextDouble();
-        Double g = rand.nextDouble();
-        Double b = rand.nextDouble();
-        Color randomColor = new Color(r,g,b,1.0);
-        circle.setFill(randomColor);
+        circle.setFill(playerColor);
         circle.setStroke(Color.BLACK);
         return circle;
     }

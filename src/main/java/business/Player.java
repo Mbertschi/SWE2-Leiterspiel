@@ -1,12 +1,12 @@
 package business;
 
-import javafx.scene.shape.Circle;
+import javafx.scene.paint.Color;
 import persistence.PlayerList;
 
 public class Player {
 
     private String name;
-    private Circle colorCircle;
+    private Color playerColor;
     private Integer playerPlayFieldCellNumber;
     private Integer playerNumber;
     private boolean playerTurn;
@@ -14,17 +14,13 @@ public class Player {
     public Player() {
     }
 
-    public Player(Integer playerNumber, String name, Circle colorCircle, Integer playerPlayFieldCellNumber) {
-        this.playerNumber = playerNumber;
-        this.name = name;
-        this.colorCircle = colorCircle;
-        this.playerPlayFieldCellNumber = playerPlayFieldCellNumber;
+    public Player(Integer playerNumber, String name, Color playerColor, Integer playerPlayFieldCellNumber) {
         this.playerTurn = false; // ToDo : put this dynamic
-        setPlayerNumber(this.playerNumber);
-        setName(this.name);
-        setCircle(this.colorCircle);
-        setPlayerPlayFieldCellNumber(this.playerPlayFieldCellNumber);
-        setPlayerTurn(this.playerTurn);
+        setPlayerNumber(playerNumber);
+        setName(name);
+        setPlayerColor(playerColor);
+        setPlayerPlayFieldCellNumber(playerPlayFieldCellNumber);
+        setPlayerTurn(playerTurn);
     }
 
     @Override
@@ -46,11 +42,11 @@ public class Player {
         return name;
     }
 
-    private void setCircle(Circle circle) {
-        this.colorCircle = circle;
+    private void setPlayerColor(Color color) {
+        this.playerColor = color;
     }
-    public Circle getCircle() {
-        return this.colorCircle;
+    public Color getPlayerColor() {
+        return this.playerColor;
     }
 
     public void setPlayerPlayFieldCellNumber(Integer playerPlayFieldCellNumber) {
