@@ -10,12 +10,14 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import persistence.PlayerList;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 
 public class Router {
@@ -35,12 +37,12 @@ public class Router {
     }
 
     @FXML
-    private List<Circle> playerCircles;
-    private void setPlayerCircles(Circle colorCircle) {
-        this.playerCircles.add(colorCircle);
+    private List<Color> playerColors;
+    private void setPlayerColors(Color playerColor) {
+        this.playerColors.add(playerColor);
     }
-    public List<Circle> getPlayerCircles() {
-        return this.playerCircles;
+    public List<Color> getPlayerColors() {
+        return this.playerColors;
     }
 
     @FXML
@@ -77,7 +79,7 @@ public class Router {
 
         Pane pane = new Pane();
         pane.getChildren().add(scene);
-        this.playerCircles = new ArrayList<>();
+        this.playerColors = new ArrayList<>();
 
         for (int x = 0; x < amountPlayers; x++) {
             // add textfields
@@ -88,9 +90,18 @@ public class Router {
             textfield.setLayoutX(xValue);
             textfield.setLayoutY(yValue);
             // add Circles
-            Circle circle = new ColorCircle().createCircle();
 
-            this.setPlayerCircles(circle);
+
+            // ToDo : put this in a other class or function
+
+            Random rand = new Random();
+            Double r = rand.nextDouble();
+            Double g = rand.nextDouble();
+            Double b = rand.nextDouble();
+            Color randomColor = new Color(r,g,b,1.0);
+            this.setPlayerColors(randomColor);
+            Circle circle = new ColorCircle().createCircle(randomColor);
+
 
             Double circleXValue = xValue - 30;
             Double circleYValue = yValue + 13.5;
@@ -146,7 +157,7 @@ public class Router {
 
             player = player.getPlayer(i);
 
-            Circle playerCircle = player.getCircle();
+            Circle playerCircle = new ColorCircle().createCircle(player.getPlayerColor());
             playerPane.setConstraints(playerCircle, 0, i);
             playerPane.getChildren().addAll(playerCircle);
 

@@ -2,6 +2,7 @@ package UI;
 
 import business.Converter;
 import business.Player;
+import business.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
@@ -12,18 +13,6 @@ import javafx.scene.text.Text;
 import persistence.PlayerList;
 import java.io.IOException;
 import java.util.List;
-
-class CircleCopy {
-    private Circle circle;
-
-    public CircleCopy(Circle playerCircle) {
-        this.circle = playerCircle; // you can access
-    }
-
-    public Circle getCircleCopy() {
-        return this.circle;
-    }
-}
 
 public class FXMLControllerScenePlayfield {
 
@@ -38,17 +27,15 @@ public class FXMLControllerScenePlayfield {
         this.playfield = Router.getInstance().getPlayField();
         Group fieldGroup = getFieldNumberFromPlayfield(playfield, 1);
 
-        //CircleCopy circleCopy = new CircleCopy(fieldPlayers.get(1).getCircle());
-        //fieldGroup.getChildren().add(circleCopy.getCircleCopy());
-
         int i = 1;
         for(Player player : fieldPlayers){
-            Circle playerCircle = player.getCircle();
+
+            Circle playerCircle = new ColorCircle().createCircle(player.getPlayerColor());
             playerCircle.setRadius(6);
             playerCircle.setLayoutY(30);
             playerCircle.setLayoutX(i * 6);
-            CircleCopy circleCopy = new CircleCopy(playerCircle);
-            fieldGroup.getChildren().addAll(circleCopy.getCircleCopy());
+
+            fieldGroup.getChildren().addAll(playerCircle);
             i++;
         }
 
@@ -58,7 +45,8 @@ public class FXMLControllerScenePlayfield {
         Player player = this.getPlayerWhoIsInTurn();
         Integer newPlayerFieldNumber = player.getPlayerPlayFieldCellNumber() + diceNumber;
         Group fieldGroup = getFieldNumberFromPlayfield(this.playfield, newPlayerFieldNumber);
-        fieldGroup.getChildren().addAll(player.getCircle());
+        Circle playerCircle = new ColorCircle().createCircle(player.getPlayerColor());
+        fieldGroup.getChildren().addAll(playerCircle);
         // ToDo : handle with specialfield
         player.setPlayerPlayFieldCellNumber(newPlayerFieldNumber);
     }

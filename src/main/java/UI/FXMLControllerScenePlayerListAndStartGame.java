@@ -6,7 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import javafx.scene.layout.Pane;
 import javafx.scene.control.TextField;
-import javafx.scene.shape.Circle;
+import javafx.scene.paint.Color;
 import java.io.IOException;
 
 public class FXMLControllerScenePlayerListAndStartGame {
@@ -27,8 +27,10 @@ public class FXMLControllerScenePlayerListAndStartGame {
             if (child instanceof TextField) {
                 playerNumber = counter + 1;
                 String playerName = ((TextField) child).getText();
-                Circle circle = Router.getInstance().getPlayerCircles().get(counter);
-                Player player = new Player(playerNumber, playerName, circle, playerPlayFieldCellNumber);
+                //Circle circle = Router.getInstance().getPlayerCircles().get(counter);
+                Color color = Router.getInstance().getPlayerColors().get(counter);
+
+                Player player = new Player(playerNumber, playerName, color, playerPlayFieldCellNumber);
                 player.addPlayertoList(player);
                 counter++;
             }
