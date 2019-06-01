@@ -14,6 +14,10 @@ public class Player {
     public Player() {
     }
 
+    public Player(String name){
+        setName(name);
+    }
+
     public Player(Integer playerNumber, String name, Color playerColor, Integer playerPlayFieldCellNumber) {
         this.playerTurn = false; // ToDo : put this dynamic
         setPlayerNumber(playerNumber);
