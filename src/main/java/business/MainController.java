@@ -7,14 +7,13 @@ import java.util.List;
 
 public class MainController {
 
-        private FXMLControllerScenePlayfield fxmlControllerScenePlayfield;
+        private FXMLControllerScenePlayfield fxmlControllerScenePlayfield = new FXMLControllerScenePlayfield();
         private int diceNumber;
 
         public MainController() {
         }
 
         public void initializePlayersOnFirstField() {
-                this.fxmlControllerScenePlayfield = new FXMLControllerScenePlayfield();
                 this.fxmlControllerScenePlayfield.initializeFirstPlayfieldCell(getPlayerList());
         }
 

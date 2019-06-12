@@ -9,7 +9,7 @@ public class Player {
     private Color playerColor;
     private Integer playerPlayFieldCellNumber;
     private Integer playerNumber;
-    private boolean playerTurn;
+    private Boolean playerTurn;
 
     public Player() {
     }
@@ -18,8 +18,7 @@ public class Player {
         setName(name);
     }
 
-    public Player(Integer playerNumber, String name, Color playerColor, Integer playerPlayFieldCellNumber) {
-        this.playerTurn = false; // ToDo : put this dynamic
+    public Player(Integer playerNumber, String name, Color playerColor, Integer playerPlayFieldCellNumber, Boolean playerTurn) {
         setPlayerNumber(playerNumber);
         setName(name);
         setPlayerColor(playerColor);
@@ -60,11 +59,11 @@ public class Player {
         return this.playerPlayFieldCellNumber;
     }
 
-    private void setPlayerTurn(boolean playerTurn) {
+    public void setPlayerTurn(boolean playerTurn) {
         this.playerTurn = playerTurn;
     }
 
-    public boolean getPlayerTurn() {
+    public Boolean getPlayerTurn() {
         return this.playerTurn;
     }
 
