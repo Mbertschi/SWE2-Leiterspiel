@@ -34,40 +34,27 @@ public class PlayerList implements MokInterfaceDataPlayer {
 
     public void RemovePlayerFromList(Player player) {
         int playerId = this.playerList.indexOf(player);
-        this.playerList.remove(this.playerList.get(playerId));
         int nextPlayerId = this.chooseNextPlayer(playerId);
+
+        this.playerList.remove(this.playerList.get(playerId));
+        this.playerNumbers.remove(this.playerList.get(playerId));
 
         System.out.println("Now is turn Player: " + this.playerList.get(nextPlayerId).getName());
         this.playerList.get(nextPlayerId).setPlayerTurn(true);
     }
 
+    // ToDo : check in debugging the index of new list after first player won and deleted in list
     private int chooseNextPlayer(int deletedPlayerId) {
-        boolean playerDeleted = false;
-        for(int number : this.getPlayerNumbers()) {
-            if(!playerDeleted) {
-                if(number == deletedPlayerId && !playerDeleted);
-                this.playerNumbers.remove(deletedPlayerId);
-                playerDeleted = true;
-                for (Player player : this.getPlayerList()) {
-                    // get first player
-                    if(deletedPlayerId == 0) {
-                        return player.getPlayerNumber();
-                    }
-                    // get some player which now comes as next
-                    if(player.getPlayerNumber() == deletedPlayerId) {
-                        return player.getPlayerNumber();
-                    }
-                    // get last player
-                    if(this.getPlayerList().size() == deletedPlayerId) {
-                        return player.getPlayerNumber();
-                    }
-                }
+        System.out.println(deletedPlayerId);
+        boolean playerFound = false;
+        for (Player player : this.playerList) {
+            if(playerFound) {
+                return this.playerList.indexOf(player);
             }
             else {
-                // ToDo : delete this because this will never happen
-                // ToDo : i WAS HERE
-                System.out.println(number);
-                return this.playerNumbers.get(number);
+                if(deletedPlayerId == this.playerList.indexOf(deletedPlayerId)) {
+                    playerFound = true;
+                }
             }
         }
         return 0;
