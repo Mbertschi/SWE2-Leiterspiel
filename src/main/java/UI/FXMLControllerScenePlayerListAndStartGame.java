@@ -27,10 +27,13 @@ public class FXMLControllerScenePlayerListAndStartGame {
             if (child instanceof TextField) {
                 playerNumber = counter + 1;
                 String playerName = ((TextField) child).getText();
-                //Circle circle = Router.getInstance().getPlayerCircles().get(counter);
                 Color color = Router.getInstance().getPlayerColors().get(counter);
-
-                Player player = new Player(playerNumber, playerName, color, playerPlayFieldCellNumber);
+                // Player 1 will be the first one who will be in turn when game starts
+                Boolean firstTurn = false;
+                if(playerNumber == 1) {
+                    firstTurn = true;
+                }
+                Player player = new Player(playerNumber, playerName, color, playerPlayFieldCellNumber, firstTurn);
                 player.addPlayertoList(player);
                 counter++;
             }

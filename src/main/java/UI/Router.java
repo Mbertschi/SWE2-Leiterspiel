@@ -37,6 +37,15 @@ public class Router {
     }
 
     @FXML
+    private List<Circle> playerCircles;
+    public void setPlayerCircles(List<Circle> playerCircles) {
+        this.playerCircles = playerCircles;
+    }
+    public List<Circle> getPlayerCircles() {
+        return this.playerCircles;
+    }
+
+    @FXML
     private List<Color> playerColors;
     private void setPlayerColors(Color playerColor) {
         this.playerColors.add(playerColor);
