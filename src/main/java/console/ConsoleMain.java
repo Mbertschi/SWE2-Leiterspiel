@@ -12,6 +12,10 @@ public class ConsoleMain {
         console.initializePlayers();
         console.showList();
 
+        console.printTableHeader();
+        console.printTableContent();
+        console.printTableFooter();
+
 
     }
 }

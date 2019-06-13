@@ -58,9 +58,10 @@ public class PlayerList implements MokInterfaceDataPlayer {
         return player;
     }
 
-//    public ListView<Player>  showList(){
-//        System.out.println(playerList);
-//        playerListView.setItems(playerListOb);
-//        return playerListView;
-//    }
+    public List<Player>  showList() {
+
+
+        return playerList;
+    }
+
 }
