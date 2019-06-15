@@ -36,24 +36,38 @@ public class PlayerList implements MokInterfaceDataPlayer {
         int playerId = this.playerList.indexOf(player);
         int nextPlayerId = this.chooseNextPlayer(playerId);
 
-        this.playerList.remove(this.playerList.get(playerId));
-        this.playerNumbers.remove(this.playerList.get(playerId));
+        for (Player playerTurn : this.playerList) {
+            int idx = this.playerList.indexOf(playerTurn);
+            System.out.println("Index:  " + idx + "-- Player : " + this.playerList.get(idx).getName() + "-- Turn :" + this.playerList.get(idx).getPlayerTurn());
+        }
 
-        System.out.println("Now is turn Player: " + this.playerList.get(nextPlayerId).getName());
         this.playerList.get(nextPlayerId).setPlayerTurn(true);
+        System.out.println("Now is turn Player: " + this.playerList.get(nextPlayerId).getName() + "-- Turn :" + this.playerList.get(nextPlayerId).getPlayerTurn());
     }
 
     // ToDo : check in debugging the index of new list after first player won and deleted in list
-    private int chooseNextPlayer(int deletedPlayerId) {
-        System.out.println(deletedPlayerId);
-        boolean playerFound = false;
+    private int chooseNextPlayer(int deletePlayerId) {
+        System.out.println(deletePlayerId);
+        int idOfNewLastPlayer = this.playerList.size() - 1;
         for (Player player : this.playerList) {
-            if(playerFound) {
-                return this.playerList.indexOf(player);
-            }
-            else {
-                if(deletedPlayerId == this.playerList.indexOf(deletedPlayerId)) {
-                    playerFound = true;
+
+            if(deletePlayerId == this.playerList.indexOf(player)) {
+                this.playerList.remove(this.playerList.get(deletePlayerId));
+                this.playerNumbers.remove(this.playerNumbers.get(deletePlayerId));
+                // set all players their playerturn on false
+
+                int i = 0;
+                for(Player playerTurn : this.playerList) {
+                    this.playerList.set(i, playerTurn).setPlayerTurn(false);
+                    i++;
+                }
+
+                // if delete the last player in the list then get the first -> 0
+                if(deletePlayerId == idOfNewLastPlayer) {
+                    return 0;
+                }
+                else {
+                    return deletePlayerId;
                 }
             }
         }
