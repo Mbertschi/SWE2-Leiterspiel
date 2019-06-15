@@ -5,6 +5,9 @@ import business.Converter;
 import business.Player;
 import business.Rules;
 import persistence.PlayerList;
+
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Console {
@@ -78,6 +81,31 @@ public class Console {
     public void showList(){
 
           System.out.println(PlayerList.getInstance().getPlayerList());
+    }
+
+    public static void printTableHeader() {
+        System.out.format("+--------+-----------------+-----------------+------------+%n");
+        System.out.format("| ID     | Spielername     | Aktuelles Feld  | Zielfeld   |%n");
+        System.out.format("+--------+-----------------+-----------------+------------+%n");
+    }
+
+    public static void printTableContent() {
+
+        String leftAlignFormat = "| %-6s | %-15s | %-15s | %-15s |%n";
+
+        List<Player> players = PlayerList.getInstance().showList();
+
+        for(int i = 0; i < PlayerList.getInstance().showList().size(); i++) {
+            System.out.printf(
+                    leftAlignFormat,
+                    i,
+                    players.get(i).getName()
+            );
+        }
+    }
+
+    public static void printTableFooter() {
+        System.out.format("+--------+-----------------+-----------------+------------+%n");
     }
 
 

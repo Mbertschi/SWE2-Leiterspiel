@@ -108,4 +108,11 @@ public class PlayerList implements MokInterfaceDataPlayer {
         player = getPlayerList().get(i);
         return player;
     }
+
+    public List<Player>  showList() {
+
+
+        return playerList;
+    }
+
 }
