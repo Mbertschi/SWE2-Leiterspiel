@@ -1,26 +1,51 @@
 package persistence;
 
+import business.Field;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class DataFieldState implements MokInterfaceDataFieldState {
+public class DataFieldState  {
 
-    List fildState = new ArrayList();
+    private Integer playFieldState;
 
-    @Override
-    public List getDataFieldState() {
-        return null;
+    List<Integer> fildState = new ArrayList();
+    private static DataFieldState setInstance = new DataFieldState();
+    public static DataFieldState getInstance() {
+        return setInstance;
     }
 
-    @Override
-    public void updateFieldState() {
+
+    public void getDataFieldState() {
+
 
     }
 
-    @Override
+
+    public void updateFieldState(int x,int i) {
+       this.fildState.set(x,i) ;
+    }
+
+
     public void saveFieldState() {
 
     }
 
+
+    public Integer showList(int i){
+        playFieldState = this.fildState.get(i);
+        return playFieldState;
+    }
+    public List<Integer>  showList() {
+
+
+        return this.fildState;
+    }
+
+
+    public void addStartfield() {
+        fildState.add(startField);
+    }
+    private int startField= 1;
 
 }

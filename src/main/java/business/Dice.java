@@ -11,6 +11,16 @@ import javafx.util.Duration;
 
 public class Dice extends Pane {
 
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
+    private int number;
+
     private static final int MAX_Value = 6;
     private static final int MIN_Value = 1;
     private final SimpleIntegerProperty valueProperty = new SimpleIntegerProperty();
@@ -47,5 +57,10 @@ public class Dice extends Pane {
         rt.play();
 
         this.mainController.addValueOfRollDiceAndAddToPlayer(randomNumber);
+    }
+    public void rollConsol() {
+
+        int randomNumber = (int)(Math.random()*(MAX_Value-MIN_Value+1))+MIN_Value;
+        setNumber(randomNumber);
     }
 }

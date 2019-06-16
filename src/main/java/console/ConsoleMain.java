@@ -1,6 +1,8 @@
 package console;
 
 
+import business.Playfield;
+
 
 public class ConsoleMain {
     public static void main(String[] args) {
@@ -8,13 +10,14 @@ public class ConsoleMain {
         Console console = new Console();
 
 
-        console.start();
+
+
         console.initializePlayers();
         console.showList();
+        console.startClient();
 
-        console.printTableHeader();
-        console.printTableContent();
-        console.printTableFooter();
+
+
 
 
     }

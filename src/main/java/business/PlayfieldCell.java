@@ -7,6 +7,10 @@ import javafx.scene.text.Text;
 
 public class PlayfieldCell {
 
+    public void playfieldCell(int i){
+
+    }
+
     public Group CreateCell(Integer cellId, Color color) {
 
         String cellValue = cellId.toString();
