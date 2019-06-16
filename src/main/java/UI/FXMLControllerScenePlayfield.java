@@ -58,8 +58,6 @@ public class FXMLControllerScenePlayfield {
             setPlayerCircles(playerCircle);
 
             fieldGroup.getChildren().addAll(playerCircle);
-
-            PlayerList.getInstance().setPlayerNumbers(player);
             i++;
         }
         Router.getInstance().setPlayerCircles(this.getPlayerCircles());
@@ -130,24 +128,39 @@ public class FXMLControllerScenePlayfield {
         List<Player> playerList = PlayerList.getInstance().getPlayerList();
         for(Player player : playerList) {
             if(player.getPlayerTurn()) {
-                player.setPlayerTurn(false);
 
-                int lastPlayerId = playerList.indexOf(player);
-                lastPlayerId++;
-                if(lastPlayerId == playerList.size()) {
-                    Player nextPlayer = playerList.get(0);
-                    nextPlayer.setPlayerTurn(true);
-                    System.out.println(nextPlayer.getName());
-                    return nextPlayer;
-                }
-                else {
-                    int playerNr = player.getPlayerNumber();
-                    Player nextPlayer = playerList.get(playerNr);
-                    nextPlayer.setPlayerTurn(true);
-                    System.out.println(nextPlayer.getName());
-                    return nextPlayer;
-                }
+                boolean playerFound = false;
+                boolean nextPlayerFound = false;
+                // get next player after this one
+                for(Player nextPlayer : playerList) {
+                    if(nextPlayer.getPlayerTurn()) {
+                        player.setPlayerTurn(false);
+                        playerFound = true;
+                    }
 
+                    if(playerFound) {
+                        int lastPlayerId = playerList.indexOf(nextPlayer);
+                        lastPlayerId++;
+                        if(!nextPlayerFound && lastPlayerId == playerList.size()) {
+                            nextPlayer = playerList.get(0);
+                            nextPlayer.setPlayerTurn(true);
+                            System.out.println("Really Turn1: " + nextPlayer.getName());
+                            return nextPlayer;
+                        }
+
+                        else if(nextPlayerFound) {
+                            nextPlayer.setPlayerTurn(true);
+                            System.out.println("Really Turn2: " + nextPlayer.getName());
+                            return nextPlayer;
+                        }
+
+                        else {
+                            nextPlayerFound = true;
+                            continue;
+                        }
+
+                    }
+                }
             }
         }
         return null;

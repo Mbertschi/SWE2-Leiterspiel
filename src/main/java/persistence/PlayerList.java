@@ -24,13 +24,6 @@ public class PlayerList implements MokInterfaceDataPlayer {
     public List<Player> getPlayerList() {
         return this.playerList;
     }
-    private List<Integer> playerNumbers = new ArrayList<>();
-    public void setPlayerNumbers(Player player) {
-        this.playerNumbers.add(player.getPlayerNumber());
-    }
-    private List<Integer> getPlayerNumbers() {
-        return this.playerNumbers;
-    }
 
     public void RemovePlayerFromList(Player player) {
         int playerId = this.playerList.indexOf(player);
@@ -45,28 +38,19 @@ public class PlayerList implements MokInterfaceDataPlayer {
         System.out.println("Now is turn Player: " + this.playerList.get(nextPlayerId).getName() + "-- Turn :" + this.playerList.get(nextPlayerId).getPlayerTurn());
     }
 
-    // ToDo : check in debugging the index of new list after first player won and deleted in list
     private int chooseNextPlayer(int deletePlayerId) {
         System.out.println(deletePlayerId);
-        int idOfNewLastPlayer = this.playerList.size() - 1;
         for (Player player : this.playerList) {
 
             if(deletePlayerId == this.playerList.indexOf(player)) {
                 this.playerList.remove(this.playerList.get(deletePlayerId));
-                this.playerNumbers.remove(this.playerNumbers.get(deletePlayerId));
-                // set all players their playerturn on false
 
-                int i = 0;
-                for(Player playerTurn : this.playerList) {
-                    this.playerList.set(i, playerTurn).setPlayerTurn(false);
-                    i++;
-                }
-
-                // if delete the last player in the list then get the first -> 0
-                if(deletePlayerId == idOfNewLastPlayer) {
-                    return 0;
+                if(deletePlayerId == 0) {
+                    int lastPlayerIdx = this.playerList.size() - 1;
+                    return lastPlayerIdx;
                 }
                 else {
+                    deletePlayerId = deletePlayerId - 1;
                     return deletePlayerId;
                 }
             }

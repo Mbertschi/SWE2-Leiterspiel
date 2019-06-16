@@ -31,7 +31,7 @@ public class Player {
         return this.name;
     }
 
-    private void setPlayerNumber(Integer playerNumber) {
+    public void setPlayerNumber(Integer playerNumber) {
         this.playerNumber = playerNumber;
     }
     public Integer getPlayerNumber() {
