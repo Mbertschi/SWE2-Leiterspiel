@@ -8,6 +8,7 @@ import java.io.IOException;
 
 
 public class FXMLControllerSceneRankingAndRestart {
+
     Router router = new Router();
     public void backToSceneOne(ActionEvent event) throws IOException {
      router.toNextScene(event, "SceneInitializePlayers");
@@ -24,7 +25,10 @@ public class FXMLControllerSceneRankingAndRestart {
         System.exit(0);
     }
 
+    public void changeToLastScene() throws IOException {
+        Router.getInstance().toLastScene("SceneRankingAndRestart");
 
+    }
 
 
 }

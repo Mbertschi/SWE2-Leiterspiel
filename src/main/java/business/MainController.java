@@ -2,7 +2,10 @@ package business;
 
 
 import UI.FXMLControllerScenePlayfield;
+import UI.Router;
 import persistence.PlayerList;
+
+import java.io.IOException;
 import java.util.List;
 
 public class MainController {
@@ -25,5 +28,13 @@ public class MainController {
 
         public List<Player> getPlayerList() {
                 return PlayerList.getInstance().getPlayerList();
+        }
+
+        public void routeChangeToLastScene() {
+                try {
+                        Router.getInstance().changeToLastScene();
+                } catch (IOException e) {
+                        e.printStackTrace();
+                }
         }
 }

@@ -1,7 +1,11 @@
 package persistence;
 
+
+import UI.Router;
+import business.MainController;
 import business.Player;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -11,6 +15,10 @@ public class PlayerList implements MokInterfaceDataPlayer {
 
 
     private Player player;
+
+
+
+
 
     private static PlayerList setInstance = new PlayerList();
     public static PlayerList getInstance() {
@@ -54,6 +62,13 @@ public class PlayerList implements MokInterfaceDataPlayer {
             if(deletePlayerId == this.playerList.indexOf(player)) {
                 this.playerList.remove(this.playerList.get(deletePlayerId));
                 this.playerNumbers.remove(this.playerNumbers.get(deletePlayerId));
+
+                // if list only contains one player then game is over and last scene displays
+                if( this.playerList.size() == 1){
+                    MainController mainController = new MainController();
+                    mainController.routeChangeToLastScene();
+                }
+
                 // set all players their playerturn on false
 
                 int i = 0;
@@ -73,6 +88,8 @@ public class PlayerList implements MokInterfaceDataPlayer {
         }
         return 0;
     }
+
+
 
     @Override
     public void getDataPlayer() {

@@ -2,8 +2,10 @@ package console;
 
 
 import business.Converter;
+import business.Field;
 import business.Player;
 import business.Rules;
+import persistence.DataFieldState;
 import persistence.PlayerList;
 
 import java.util.LinkedList;
@@ -94,6 +96,7 @@ public class Console {
         String leftAlignFormat = "| %-6s | %-15s | %-15s | %-15s |%n";
 
         List<Player> players = PlayerList.getInstance().showList();
+
 
         for(int i = 0; i < PlayerList.getInstance().showList().size(); i++) {
             System.out.printf(

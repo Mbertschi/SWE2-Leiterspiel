@@ -81,6 +81,21 @@ public class Router {
         window.show();
     }
 
+    public void changeToLastScene() throws IOException {
+        FXMLControllerSceneRankingAndRestart fxmlControllerSceneRankingAndRestart = new FXMLControllerSceneRankingAndRestart();
+        fxmlControllerSceneRankingAndRestart.changeToLastScene();
+    }
+
+    public void toLastScene(String fxmlScene) throws IOException {
+
+        Parent scene = FXMLLoader.load(getClass().getResource(fxmlScene+".fxml"));
+        Scene windowScene = new Scene(scene);
+        Stage window = new Stage();
+        window.setScene(windowScene);
+        window.show();
+    }
+
+
     public void toNextScene(ActionEvent event, String fxmlScene, Integer amountPlayers)throws IOException {
 
         Parent scene = FXMLLoader.load(getClass().getResource(fxmlScene+".fxml"));
@@ -189,5 +204,7 @@ public class Router {
         mainController.initializePlayersOnFirstField();
 
     }
+
+
 
 }

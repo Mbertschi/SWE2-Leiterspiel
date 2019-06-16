@@ -4,7 +4,7 @@ package business;
 import javafx.scene.Group;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-
+import persistence.DataFieldState;
 
 
 public class Playfield {
@@ -64,5 +64,16 @@ public class Playfield {
 
         return this.gridPane;
     }
+
+    private int size =60;
+
+    public void creatConsolPlayfield() {
+        for (int i = 0; i <= size; i++) {
+            int x = i + 1;
+            Field field = new Field(x);
+            DataFieldState.getInstance().addFieldsToList(field);
+        }
+    }
+
 
 }
