@@ -1,10 +1,7 @@
 package console;
 
 
-import business.Converter;
-import business.Field;
-import business.Player;
-import business.Rules;
+import business.*;
 import persistence.DataFieldState;
 import persistence.PlayerList;
 
@@ -15,6 +12,13 @@ import java.util.Scanner;
 public class Console {
 
     private String numbersOfPlayers;
+    private Scanner inputReader;
+    private String lastUserInput;
+
+    public Console() {
+        this.inputReader = new Scanner(System.in);
+    }
+
 
     public String getNumbersOfPlayers() {
         return numbersOfPlayers;
@@ -24,16 +28,22 @@ public class Console {
         this.numbersOfPlayers = numbersOfPlayers;
     }
 
+    Dice dice = new Dice();
 
+    public void startClient() {
 
+        System.out.println("\n\033[0;1m" + "Leiterspiel Rehan und Michi");
+        System.out.println("----------------------------------------------------------------\n");
 
-
-
-    public void start(){
-        System.out.println("Leiterspiel by Rehan & Michi");
-
-
+        this.printTableHeader();
+        printTableContent();
+        this.printTableFooter();
+        this.showMenu();
+        System.out.println("Gewürftele Zahl"+this.dice.getNumber());
     }
+
+
+
 
     public void initializePlayers(){
         System.out.println("Bitte eine Spieleranzahl zwischen 2 und 8 eingeben");
@@ -49,10 +59,9 @@ public class Console {
          validateNumber(getNumbersOfPlayers());
     }
 
-   // String numberOfPlayers = amountPlayerConsole();
+
 
     public void validateNumber( String numberOfPlayers ) {
-        //String numberOfPlayers = amountPlayerConsole();
         if (Rules.validateNumberOfPlayer(numberOfPlayers)) {
             Integer amountPlayers = Converter.convertStringToInt(numberOfPlayers);
             createPlayer(amountPlayers);
@@ -76,13 +85,16 @@ public class Console {
             String playerName = scannerPlayerName.next();
             Player player = new Player(playerName);
             player.addPlayertoList(player);
+            DataFieldState.getInstance().addStartfield();
         }
+
 
     }
 
     public void showList(){
 
           System.out.println(PlayerList.getInstance().getPlayerList());
+          System.out.println(DataFieldState.getInstance().showList());
     }
 
     public static void printTableHeader() {
@@ -93,16 +105,19 @@ public class Console {
 
     public static void printTableContent() {
 
-        String leftAlignFormat = "| %-6s | %-15s | %-15s | %-15s |%n";
+        String leftAlignFormat = "| %-6s | %-15s | %-15s | %-10s |%n";
 
         List<Player> players = PlayerList.getInstance().showList();
-
+        List<Integer> fields = DataFieldState.getInstance().showList();
+        Playfield playfield = new Playfield();
 
         for(int i = 0; i < PlayerList.getInstance().showList().size(); i++) {
             System.out.printf(
                     leftAlignFormat,
                     i,
-                    players.get(i).getName()
+                    players.get(i).getName(),
+                    fields.get(i),
+                    playfield.getFinishField()
             );
         }
     }
@@ -111,5 +126,33 @@ public class Console {
         System.out.format("+--------+-----------------+-----------------+------------+%n");
     }
 
+    public void showMenu() {
+        System.out.println("\nWäle eine Option:");
+        System.out.println("  1 - Würfeln");
+        System.out.println("  2 - Show all Customers");
+        System.out.println("  3 - Show one Customer");
+        System.out.println("  q - Benden\n");
 
+        // Wait for the user selection
+        this.listenToMenuSelection();
+    }
+    private void listenToMenuSelection() {
+
+        this.lastUserInput = this.inputReader.next();
+
+        switch (this.lastUserInput) {
+            case "1": {
+                dice.rollConsol();
+                startClient();
+            }
+            case "q": {
+                // Tell the prozess to be exited with success
+                System.exit(0);
+            }
+            default: {System.out.println("Bitte 1 oder q eingeben");
+                      startClient();
+            }
+
+        }
+    }
 }

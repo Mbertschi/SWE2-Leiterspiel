@@ -65,15 +65,38 @@ public class Playfield {
         return this.gridPane;
     }
 
-    private int size =60;
 
-    public void creatConsolPlayfield() {
-        for (int i = 0; i <= size; i++) {
-            int x = i + 1;
-            Field field = new Field(x);
-            DataFieldState.getInstance().addFieldsToList(field);
-        }
+
+    // Console
+
+    public int getStartField() {
+        return startField;
     }
 
+
+
+    private int startField = 1;
+
+    public int getFinishField() {
+        return finishField;
+    }
+
+
+
+    private int finishField = 60;
+
+    public int getField( int x){
+
+
+        return DataFieldState.getInstance().showList(x);
+    }
+
+    public void addDefaultfield(int i){
+
+
+        for(int x=0; x==i; x++) {
+            DataFieldState.getInstance().addStartfield();
+        }
+    }
 
 }

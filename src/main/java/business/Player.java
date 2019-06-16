@@ -1,6 +1,7 @@
 package business;
 
 import javafx.scene.paint.Color;
+import persistence.DataFieldState;
 import persistence.PlayerList;
 
 public class Player {
@@ -74,6 +75,8 @@ public class Player {
     public Player getPlayer(int x) {
         return PlayerList.getInstance().showList(x);
     }
+
+
 }
 
 
