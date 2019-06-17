@@ -35,14 +35,37 @@ public class Playfield {
                 switch(cellNumber) {
                     case 1: fieldCell = playfieldCell.CreateCell(cellNumber, Color.LIGHTGREEN);
                         break;
-                    /*
+                    // Latter 1
                     case 4: fieldCell = playfieldCell.CreateCell(cellNumber, Color.GREEN);
-                            break;
-                    case 10: fieldCell = playfieldCell.CreateCell(cellNumber, Color.YELLOW);
                         break;
-                    case 20: fieldCell = playfieldCell.CreateCell(cellNumber, Color.PINK);
+                    case 25: fieldCell = playfieldCell.CreateCell(cellNumber, Color.GREEN);
+                        break;
+                    // Latter 2
+                    case 12: fieldCell = playfieldCell.CreateCell(cellNumber, Color.DARKGREEN);
+                        break;
+                    case 33: fieldCell = playfieldCell.CreateCell(cellNumber, Color.DARKGREEN);
+                        break;
+                    // Snake 1
+                    case 20: fieldCell = playfieldCell.CreateCell(cellNumber, Color.RED);
+                        break;
+                    case 38: fieldCell = playfieldCell.CreateCell(cellNumber, Color.RED);
+                        break;
+                    /* Snake 2
+                    case 20: fieldCell = playfieldCell.CreateCell(cellNumber, Color.RED);
+                        break;
+                    case 38: fieldCell = playfieldCell.CreateCell(cellNumber, Color.RED);
                         break;
                     */
+                    // Snake 3
+                    case 27: fieldCell = playfieldCell.CreateCell(cellNumber, Color.RED);
+                        break;
+                    case 45: fieldCell = playfieldCell.CreateCell(cellNumber, Color.RED);
+                        break;
+                    // Snake 4
+                    case 37: fieldCell = playfieldCell.CreateCell(cellNumber, Color.RED);
+                        break;
+                    case 55: fieldCell = playfieldCell.CreateCell(cellNumber, Color.RED);
+                        break;
                     case 60: fieldCell = playfieldCell.CreateCell(cellNumber, Color.LIGHTGREEN);
                         break;
                     default: break;
