@@ -36,9 +36,9 @@ public class Playfield {
                     case 1: fieldCell = playfieldCell.CreateCell(cellNumber, Color.LIGHTGREEN);
                         break;
                     // Latter 1
-                    case 4: fieldCell = playfieldCell.CreateCell(cellNumber, Color.GREEN);
+                    case 4: fieldCell = playfieldCell.CreateCell(cellNumber, Color.DARKOLIVEGREEN);
                         break;
-                    case 25: fieldCell = playfieldCell.CreateCell(cellNumber, Color.GREEN);
+                    case 25: fieldCell = playfieldCell.CreateCell(cellNumber, Color.DARKOLIVEGREEN);
                         break;
                     // Latter 2
                     case 12: fieldCell = playfieldCell.CreateCell(cellNumber, Color.DARKGREEN);
@@ -46,25 +46,19 @@ public class Playfield {
                     case 33: fieldCell = playfieldCell.CreateCell(cellNumber, Color.DARKGREEN);
                         break;
                     // Snake 1
-                    case 20: fieldCell = playfieldCell.CreateCell(cellNumber, Color.RED);
+                    case 20: fieldCell = playfieldCell.CreateCell(cellNumber, Color.INDIANRED);
                         break;
-                    case 38: fieldCell = playfieldCell.CreateCell(cellNumber, Color.RED);
+                    case 38: fieldCell = playfieldCell.CreateCell(cellNumber, Color.INDIANRED);
                         break;
-                    /* Snake 2
-                    case 20: fieldCell = playfieldCell.CreateCell(cellNumber, Color.RED);
-                        break;
-                    case 38: fieldCell = playfieldCell.CreateCell(cellNumber, Color.RED);
-                        break;
-                    */
-                    // Snake 3
+                    // Snake 2
                     case 27: fieldCell = playfieldCell.CreateCell(cellNumber, Color.RED);
                         break;
                     case 45: fieldCell = playfieldCell.CreateCell(cellNumber, Color.RED);
                         break;
-                    // Snake 4
-                    case 37: fieldCell = playfieldCell.CreateCell(cellNumber, Color.RED);
+                    // Snake 3
+                    case 37: fieldCell = playfieldCell.CreateCell(cellNumber, Color.DARKRED);
                         break;
-                    case 55: fieldCell = playfieldCell.CreateCell(cellNumber, Color.RED);
+                    case 55: fieldCell = playfieldCell.CreateCell(cellNumber, Color.DARKRED);
                         break;
                     case 60: fieldCell = playfieldCell.CreateCell(cellNumber, Color.LIGHTGREEN);
                         break;
