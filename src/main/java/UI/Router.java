@@ -87,10 +87,19 @@ public class Router {
     }
 
     public void toLastScene(String fxmlScene) throws IOException {
-
+        Player player = new Player();
+        Pane pane = new Pane();
         Parent scene = FXMLLoader.load(getClass().getResource(fxmlScene+".fxml"));
-        Scene windowScene = new Scene(scene);
+        pane.getChildren().add(scene);
+        Scene windowScene = new Scene(pane);
         Stage window = new Stage();
+        GridPane playerPane = new GridPane();
+        for(int i =0; i<=player.getListsize();i++){
+            Label label = new Label();
+            label.setText(player.getName());
+            playerPane.getChildren().addAll(label);
+        }
+        pane.getChildren().add(playerPane);
         window.setScene(windowScene);
         window.show();
     }
