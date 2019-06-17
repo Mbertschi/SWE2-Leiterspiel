@@ -8,8 +8,10 @@ import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
+import javafx.scene.control.Label;
 import persistence.PlayerList;
 
 import java.io.IOException;
@@ -79,6 +81,7 @@ public class FXMLControllerScenePlayfield {
         Integer newPlayerFieldNumber = player.getPlayerPlayFieldCellNumber() + diceNumber;
 
         boolean lastField = false;
+        newPlayerFieldNumber = this.checkNewPlayerFieldNumberForSpecialField(newPlayerFieldNumber);
         if(newPlayerFieldNumber >= 60) {
             newPlayerFieldNumber = 60;
             lastField = true;
@@ -94,7 +97,8 @@ public class FXMLControllerScenePlayfield {
             Integer playerNumber = player.getPlayerNumber();
 
             if(circleNumber == playerNumber) {
-                System.out.println("Fieldnumber: " + newPlayerFieldNumber);
+                System.out.println(player.getName() + " hat " + diceNumber + " gewürfelt!");
+                System.out.println("Neue Feldnummer: " + newPlayerFieldNumber);
 
                 // Check if player has now more than the last playfield cell
                 if(lastField) {
@@ -112,12 +116,27 @@ public class FXMLControllerScenePlayfield {
 
     }
 
+    private Integer checkNewPlayerFieldNumberForSpecialField(Integer newPlayerFieldNumber) {
+        switch(newPlayerFieldNumber) {
+            // Latter 1
+            case 4: return 25;
+            // Latter 2
+            case 12: return 33;
+            // Snake 1
+            case 38: return 20;
+            // Snake 2
+            case 45: return 27;
+            // Snake 3
+            case 55: return 37;
+            default: return newPlayerFieldNumber;
+        }
+    }
+
     private Player getFirstPlayer() {
         List<Player> playerList = PlayerList.getInstance().getPlayerList();
         for(Player player : playerList) {
             if (player.getPlayerTurn()) {
                 this.firstTurn = false;
-                System.out.println(player.getName());
                 return player;
             }
         }
@@ -144,13 +163,28 @@ public class FXMLControllerScenePlayfield {
                         if(!nextPlayerFound && lastPlayerId == playerList.size()) {
                             nextPlayer = playerList.get(0);
                             nextPlayer.setPlayerTurn(true);
-                            System.out.println("Really Turn1: " + nextPlayer.getName());
+
+                            GridPane playerPane = Router.getInstance().getPlayerPane();
+                            Circle circle = new Circle();
+                            circle.setFill(Color.BLACK);
+                            playerPane.getChildren().add(nextPlayer.getPlayerNumber(), circle);
+
+                            System.out.println("----------------------------");
+                            System.out.println("Als nächstes kommt dran: " + nextPlayer.getName());
+                            System.out.println("Aktuelle Feldnummer: " + nextPlayer.getPlayerPlayFieldCellNumber());
                             return nextPlayer;
                         }
 
                         else if(nextPlayerFound) {
                             nextPlayer.setPlayerTurn(true);
-                            System.out.println("Really Turn2: " + nextPlayer.getName());
+                            GridPane playerPane = Router.getInstance().getPlayerPane();
+                            Circle circle = new Circle();
+                            circle.setFill(Color.BLACK);
+                            playerPane.getChildren().add(nextPlayer.getPlayerNumber(), circle);
+
+                            System.out.println("----------------------------");
+                            System.out.println("Als nächstes kommt dran: " + nextPlayer.getName());
+                            System.out.println("Aktuelle Feldnummer: " + nextPlayer.getPlayerPlayFieldCellNumber());
                             return nextPlayer;
                         }
 

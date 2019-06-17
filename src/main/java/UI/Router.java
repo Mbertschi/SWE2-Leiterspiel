@@ -63,6 +63,15 @@ public class Router {
         return this.playField;
     }
 
+    @FXML
+    private GridPane playerPane;
+    private void setPlayerPane(GridPane playerPane) {
+        this.playerPane = playerPane;
+    }
+    public GridPane getPlayerPane() {
+        return this.playerPane;
+    }
+
     private Dice dice;
     private void setDice(Dice dice) {
         this.dice = dice;
@@ -201,6 +210,7 @@ public class Router {
         }
 
         pane.getChildren().add(playerPane);
+        this.setPlayerPane(playerPane);
         pane.getChildren().add(playfieldGridPane);
         this.setPlayField(playfieldGridPane);
 
