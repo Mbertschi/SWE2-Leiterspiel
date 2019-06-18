@@ -76,18 +76,6 @@ public class Player {
         return PlayerList.getInstance().showList(x);
     }
 
-    public void addPlayerToRankinglist(Player player){
-        PlayerList.getInstance().addPlayerToRankinglist(player);
-    }
-
-    public int getListsize(){
-        return PlayerList.getInstance().getSizeOfRankingList();
-    }
-    public Player getPlayerFormList(int i){
-        return PlayerList.getInstance().getPlayerFromRankingList(i);
-    }
-
-
 }
 
 

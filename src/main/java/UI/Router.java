@@ -96,23 +96,36 @@ public class Router {
     }
 
     public void toLastScene(String fxmlScene) throws IOException {
-        Player player = new Player();
         Pane pane = new Pane();
         Parent scene = FXMLLoader.load(getClass().getResource(fxmlScene+".fxml"));
-        pane.getChildren().add(scene);
-        Scene windowScene = new Scene(pane);
+
         Stage window = new Stage();
         GridPane playerPane = new GridPane();
-        for(int i =0; i<=player.getListsize();i++){
-            Label label = new Label();
-            label.setText(player.getName());
+        playerPane.setLayoutX(110);
+        playerPane.setLayoutY(280);
+        playerPane.setMinHeight(300);
+
+        ColumnConstraints col1 = new ColumnConstraints();
+        col1.setMinWidth(30);
+        playerPane.getColumnConstraints().addAll(col1);
+
+        int i = 1;
+        for (Player playerRanking : PlayerList.getInstance().getRankingList()){
+
+            Label label = new Label(i + ". " + playerRanking.getName());
+
+            // set the column constraint
+            playerPane.setConstraints(label, 0, i);
             playerPane.getChildren().addAll(label);
+            i++;
         }
+
         pane.getChildren().add(playerPane);
+        pane.getChildren().add(scene);
+        Scene windowScene = new Scene(pane);
         window.setScene(windowScene);
         window.show();
     }
-
 
     public void toNextScene(ActionEvent event, String fxmlScene, Integer amountPlayers)throws IOException {
 
@@ -135,7 +148,6 @@ public class Router {
 
 
             // ToDo : put this in a other class or function
-
             Random rand = new Random();
             Double r = rand.nextDouble();
             Double g = rand.nextDouble();

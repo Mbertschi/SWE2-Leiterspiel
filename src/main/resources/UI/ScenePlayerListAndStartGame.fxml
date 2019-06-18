@@ -3,10 +3,21 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.Pane?>
 
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
 <Pane maxHeight="600" maxWidth="1000" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.FXMLControllerScenePlayerListAndStartGame">
    <children>
       <fx:include source="header.fxml" />
-      <Button fx:id="backToSceneTwo" layoutX="20.0" layoutY="530.0" mnemonicParsing="false" onAction="#backToSceneTwo" prefHeight="43.0" prefWidth="168.0" text="&lt; Zurück zu Spieler Name" />
+
+      <ImageView fitHeight="180.0" fitWidth="180" layoutX="280" layoutY="150">
+         <image><Image url="@images/setplayername.png"></Image></image>
+      </ImageView>
+
+      <ImageView fitHeight="157" fitWidth="320" layoutX="500" layoutY="150">
+         <image><Image url="@images/rules.PNG"></Image></image>
+      </ImageView>
+
+      <Button fx:id="backToSceneTwo" layoutX="20.0" layoutY="530.0" mnemonicParsing="false" onAction="#backToSceneTwo" prefHeight="43.0" prefWidth="168.0" text="&lt; Zurück" />
       <Button fx:id="goToSceneFive" layoutX="810.0" layoutY="530.0" mnemonicParsing="false" onAction="#goToSceneFive" prefHeight="43.0" prefWidth="168.0" text="Spiel Starten &gt;" />
    </children>
 </Pane>

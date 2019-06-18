@@ -26,7 +26,10 @@ public class PlayerList implements MokInterfaceDataPlayer {
     }
 
     private List<Player> playerList = new LinkedList<>();
-    private List<Player> rankingList= new ArrayList<>();
+    private List<Player> rankingList = new ArrayList<>();
+    public List<Player> getRankingList() {
+        return this.rankingList;
+    }
     private void setPlayerList(Player player) {
         this.playerList.add(player);
     }
@@ -52,13 +55,13 @@ public class PlayerList implements MokInterfaceDataPlayer {
         for (Player player : this.playerList) {
 
             if(deletePlayerId == this.playerList.indexOf(player)) {
-                this.rankingList.add(player);
+                addPlayerToRankinglist(player);
                 System.out.println(this.rankingList.get(0));
                 this.playerList.remove(this.playerList.get(deletePlayerId));
 
                 // if list only contains one player then game is over and last scene displays
                 if( this.playerList.size() == 1){
-                    this.rankingList.add(player);
+                    addPlayerToRankinglist(this.playerList.get(0));
                     MainController mainController = new MainController();
                     mainController.routeChangeToLastScene();
                     System.out.print(this.rankingList.size());
@@ -79,22 +82,18 @@ public class PlayerList implements MokInterfaceDataPlayer {
 
     @Override
     public void getDataPlayer() {
-
     }
 
     @Override
     public void SetDataPlayer() {
-
     }
 
     @Override
     public void updateDataPlayer() {
-
     }
 
     @Override
     public void SaveDataPlayer() {
-
     }
 
     @Override
@@ -117,16 +116,9 @@ public class PlayerList implements MokInterfaceDataPlayer {
 
         return playerList;
     }
-    public void addPlayerToRankinglist(Player player){
+    private void addPlayerToRankinglist(Player player){
         rankingList.add(player);
     }
 
-    public int getSizeOfRankingList(){
-       return this.rankingList.size();
-    }
-
-    public Player getPlayerFromRankingList(int x){
-        return this.rankingList.get(x);
-    }
 
 }
