@@ -14,7 +14,7 @@
          <image><Image url="@images/letsplay.png"></Image></image>
       </ImageView>
 
-      <Button fx:id="beenden" layoutX="756.0" layoutY="500.0" mnemonicParsing="false" onAction="#closeApplication" prefHeight="51.0" prefWidth="191.0" text="Spiel beenden" />
+      <Button fx:id="beenden" layoutX="756.0" layoutY="400.0" mnemonicParsing="false" onAction="#closeApplication" prefHeight="51.0" prefWidth="191.0" text="Spiel beenden" />
       <Label layoutX="107.0" layoutY="242.0" text="Rangliste:" />
    </children>
 </Pane>

@@ -1,24 +1,15 @@
 package persistence;
 
-
-import UI.Router;
 import business.MainController;
 import business.Player;
-
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
 
-public class PlayerList implements MokInterfaceDataPlayer {
-
+public class PlayerList {
 
     private Player player;
-
-
-
-
 
     private static PlayerList setInstance = new PlayerList();
     public static PlayerList getInstance() {
@@ -80,23 +71,6 @@ public class PlayerList implements MokInterfaceDataPlayer {
         return 0;
     }
 
-    @Override
-    public void getDataPlayer() {
-    }
-
-    @Override
-    public void SetDataPlayer() {
-    }
-
-    @Override
-    public void updateDataPlayer() {
-    }
-
-    @Override
-    public void SaveDataPlayer() {
-    }
-
-    @Override
     public void addPlayerToList(Player player) {
         setPlayerList(player);
     }
@@ -119,6 +93,4 @@ public class PlayerList implements MokInterfaceDataPlayer {
     private void addPlayerToRankinglist(Player player){
         rankingList.add(player);
     }
-
-
 }

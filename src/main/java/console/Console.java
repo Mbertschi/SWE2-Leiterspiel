@@ -4,8 +4,6 @@ package console;
 import business.*;
 import persistence.DataFieldState;
 import persistence.PlayerList;
-
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
