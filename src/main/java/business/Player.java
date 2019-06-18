@@ -76,7 +76,6 @@ public class Player {
         return PlayerList.getInstance().showList(x);
     }
 
-
 }
 
 
