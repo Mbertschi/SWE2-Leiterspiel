@@ -42,7 +42,7 @@ public class FXMLControllerSceneInitializePlayers {
         }
     }
 
-    // ToDo : Put this into the abstract class gamerules in the business layer
+    // ToDo : Put this into the abstract class gamerules in the business layer --> delete this
 
 
 }
